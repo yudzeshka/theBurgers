@@ -30,7 +30,7 @@ body {
       background-color: rgba($color: black, $alpha: 0.2);
     }
     nav {
-      margin-right: 4rem;
+      margin-left: 4rem;
       li {
         padding: 1rem;
       }
@@ -38,10 +38,11 @@ body {
 
     .img {
       padding: 1rem;
-      background-image: url(/Img/burgerlogo2.svg);
+      margin-right: 2rem;
+      background-image: url(/Img/cart.png);
       background-size: cover;
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
     }
   }
 
