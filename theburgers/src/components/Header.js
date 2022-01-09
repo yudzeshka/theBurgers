@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="header">
       <Categories
-        onClick={() => console.log("Hello")}
+        onClick={(name) => console.log(name)}
         items={["HOME", "BURGERS", "BREAKFESTS", "DRINKS"]}
       />
       <div className="flex items-center ml-4">
