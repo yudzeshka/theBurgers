@@ -1,15 +1,15 @@
 import "./App.css";
 import Header from "./components/Header";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Burgers from "./components/Pages/Burgers";
+// import { Route, Routes } from "react-router-dom";
+// import Burgers from "./components/Pages/Burgers";
 
 function App() {
   return (
     <div className="wrapper">
-      <Routes>
+      {/* <Routes>
         <Route path="/burgers" exact element={<Burgers />}></Route>
-      </Routes>
+      </Routes> */}
       <Header />
       <div className="content">
         <div className="textWrapper">

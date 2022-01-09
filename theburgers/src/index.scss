@@ -33,6 +33,10 @@ body {
       margin-left: 4rem;
       li {
         padding: 1rem;
+        cursor: pointer;
+        &:hover {
+          color: #cf0a2c;
+        }
       }
     }
 
@@ -43,6 +47,10 @@ body {
       background-size: cover;
       width: 25px;
       height: 25px;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid #cf0a2c;
+      }
     }
   }
 
