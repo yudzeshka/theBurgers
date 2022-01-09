@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 // import Burgers from "./components/Pages/Burgers";
 
 function App() {
+  const [showDescription, setShowDescription] = React.useState(false);
   const items = [
     {
       imgSrc: "img/burgers/firm.jpg",
@@ -60,6 +61,8 @@ function App() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
+                onShowDescription={() => setShowDescription(true)}
+                showDescription={showDescription}
               />
             ))}
           </div>
