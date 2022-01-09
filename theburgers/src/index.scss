@@ -15,7 +15,7 @@ body {
 
 .wrapper {
   color: #fff;
-  background-image: url(/Img/background5.jpg);
+  background-image: url(/img/background5.jpg);
   background-size: cover;
   display: flex;
   width: 100vw;
@@ -47,7 +47,7 @@ body {
     .img {
       padding: 1rem;
       margin-right: 2rem;
-      background-image: url(/Img/cart.png);
+      background-image: url(/img/cart.png);
       background-size: cover;
       width: 25px;
       height: 25px;
@@ -81,6 +81,81 @@ body {
       padding: 7px;
       &:hover {
         background-color: rgba($color: #fff, $alpha: 0.1);
+      }
+    }
+  }
+}
+
+.menuPage {
+  color: red;
+  // background-image: url(/Img/background5.jpg);
+  // background-size: cover;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 8%;
+    &:hover {
+      background-color: rgba($color: black, $alpha: 0.2);
+    }
+    nav {
+      margin-left: 4rem;
+      li {
+        padding: 1rem;
+        cursor: pointer;
+        &:hover {
+          color: #cf0a2c;
+        }
+      }
+    }
+
+    .active {
+      color: #cf0a2c;
+    }
+
+    .img {
+      padding: 1rem;
+      margin-right: 2rem;
+      background-image: url(/img/cart.png);
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      &:hover {
+        border-bottom: 1px solid #cf0a2c;
+      }
+    }
+  }
+
+  .content {
+    .promotions {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      .slider {
+        width: 50vw;
+        height: 30vh;
+        border: 1px solid black;
+      }
+    }
+  }
+  .cartItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .cart {
+      flex-basis: 30%;
+      border: 1px solid black;
+      margin: 1.5%;
+
+      .description {
+        display: none;
       }
     }
   }
