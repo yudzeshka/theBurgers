@@ -1,10 +1,34 @@
 import "./App.css";
 import Header from "./components/Header";
 import React from "react";
+import Cart from "./components/Cart";
 // import { Route, Routes } from "react-router-dom";
 // import Burgers from "./components/Pages/Burgers";
 
 function App() {
+  const items = [
+    {
+      imgSrc: "img/burgers/firm.jpg",
+      description:
+        " Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted cucumber, Red Wine ketchup. Served with French fries and cole slow",
+      dishName: "FIRM BURGER",
+      price: "9$",
+    },
+    {
+      imgSrc: "img/burgers/blek.jpg",
+      description:
+        " Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted cucumber, Red Wine ketchup. Served with French fries and cole slow",
+      dishName: "BLACK BURGER",
+      price: "12$",
+    },
+    {
+      imgSrc: "img/burgers/trufel.jpg",
+      description:
+        " Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted cucumber, Red Wine ketchup. Served with French fries and cole slow",
+      dishName: "TRUFEL BURGER",
+      price: "29$",
+    },
+  ];
   return (
     <>
       <div className="wrapper">
@@ -29,81 +53,15 @@ function App() {
             <div className="slider"></div>
           </div>
           <div className="cartItems">
-            <div className="cart">
-              <div>
-                <img src="img/firm.jpg" alt="#" />
-                <div className="description">
-                  Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted
-                  cucumber, Red Wine ketchup. Served with French fries and cole
-                  slow
-                </div>
-              </div>
-              <div className="dishName">FIRM BURGER</div>
-              <div>
-                <span>9$</span>
-                <button>Add to card</button>
-              </div>
-            </div>
-            <div className="cart">
-              <div>
-                <img src="img/firm.jpg" alt="#" />
-                <div className="description">
-                  Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted
-                  cucumber, Red Wine ketchup. Served with French fries and cole
-                  slow
-                </div>
-              </div>
-              <div className="dishName block text-center">FIRM BURGER</div>
-              <div className="flex flex-row justify-between m-2">
-                <b>9$</b>
-                <button>Add to card</button>
-              </div>
-            </div>
-            <div className="cart">
-              <div>
-                <img src="img/firm.jpg" alt="#" />
-                <div className="description">
-                  Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted
-                  cucumber, Red Wine ketchup. Served with French fries and cole
-                  slow
-                </div>
-              </div>
-              <div className="dishName block text-center">FIRM BURGER</div>
-              <div className="flex flex-row justify-between m-2">
-                <b>9$</b>
-                <button>Add to card</button>
-              </div>
-            </div>
-            <div className="cart">
-              <div>
-                <img src="img/firm.jpg" alt="#" />
-                <div className="description">
-                  Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted
-                  cucumber, Red Wine ketchup. Served with French fries and cole
-                  slow
-                </div>
-              </div>
-              <div className="dishName block text-center">FIRM BURGER</div>
-              <div className="flex flex-row justify-between m-2">
-                <b>9$</b>
-                <button>Add to card</button>
-              </div>
-            </div>
-            <div className="cart">
-              <div>
-                <img src="img/firm.jpg" alt="#" />
-                <div className="description">
-                  Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted
-                  cucumber, Red Wine ketchup. Served with French fries and cole
-                  slow
-                </div>
-              </div>
-              <div className="dishName">FIRM BURGER</div>
-              <div>
-                <span>9$</span>
-                <button>Add to card</button>
-              </div>
-            </div>
+            {items.map((item) => (
+              <Cart
+                key={item.dishName}
+                imgSrc={item.imgSrc}
+                description={item.description}
+                dishName={item.dishName}
+                price={item.price}
+              />
+            ))}
           </div>
         </div>
       </div>
