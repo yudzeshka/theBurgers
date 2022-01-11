@@ -1,9 +1,27 @@
 import React from "react";
+import Header from "../Header";
+import Cart from "../Cart";
 
-export default function Burgers() {
+export default function Burgers({ items }) {
   return (
-    <div className="burgerWrapper">
-      <h1>"Hello"</h1>;
+    <div className="menuPage">
+      <Header />
+      <div className="content">
+        <div className="promotions">
+          <div className="slider"></div>
+        </div>
+        <div className="cartItems">
+          {items.map((item) => (
+            <Cart
+              key={item.dishName}
+              imgSrc={item.imgSrc}
+              description={item.description}
+              dishName={item.dishName}
+              price={item.price}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

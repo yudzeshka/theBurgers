@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Categories({ items, onClick }) {
   const [activeItem, setActiveItem] = React.useState(null);
@@ -11,7 +12,7 @@ export default function Categories({ items, onClick }) {
             onClick={() => setActiveItem(index)}
             key={name}
           >
-            {name}
+            <Link to={name}>{name}</Link>
           </li>
         ))}
     </nav>

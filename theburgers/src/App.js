@@ -1,9 +1,9 @@
 import "./App.css";
 import Header from "./components/Header";
 import React from "react";
-import Cart from "./components/Cart";
-// import { Route, Routes } from "react-router-dom";
-// import Burgers from "./components/Pages/Burgers";
+import { Route, Routes } from "react-router-dom";
+import Burgers from "./components/Pages/Burgers";
+import Home from "./components/Pages/Home";
 
 function App() {
   const items = [
@@ -32,21 +32,16 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        {/* <Routes>
-        <Route path="/burgers" exact element={<Burgers />}></Route>
-      </Routes> */}
-        <Header />
-        <div className="content">
-          <div className="textWrapper">
-            <h1>The Burgers</h1>
-            <h3>Handcrafted since 1968</h3>
-          </div>
-          <div className="buttonsWrapper">
-            <button>RESERVATION</button>
-          </div>
-        </div>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route
+            path="/burgers"
+            exact
+            element={<Burgers items={items} />}
+          ></Route>
+        </Routes>
       </div>
-      <div className="menuPage">
+      {/* <div className="menuPage">
         <Header />
         <div className="content">
           <div className="promotions">
@@ -64,7 +59,7 @@ function App() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
