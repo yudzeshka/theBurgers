@@ -5,7 +5,7 @@ export default function Cart({ imgSrc, description, dishName, price }) {
     <div className="cart">
       <div className="relative group">
         <img src={imgSrc} alt="#" />
-        <p className="absolute w-full h-full top-0 left-0 bg-black/50 hidden group-hover:flex hover:transition-all">
+        <p className="absolute w-full h-full top-0 left-0 bg-black/50 hidden group-hover:flex hover:transition-all text-white">
           {description}
         </p>
       </div>

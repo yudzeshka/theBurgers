@@ -87,9 +87,8 @@ body {
 }
 
 .menuPage {
-  color: red;
-  // background-image: url(/Img/background5.jpg);
-  // background-size: cover;
+  background-image: url(img\brownBackground.jpg);
+  background-size: cover;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -151,6 +150,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
 
     .cart {
+      color: black;
+      background-color: #fff;
       margin: 3%;
       position: relative;
 
