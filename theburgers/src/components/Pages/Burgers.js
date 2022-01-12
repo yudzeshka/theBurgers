@@ -6,20 +6,22 @@ export default function Burgers({ items }) {
   return (
     <div className="menuPage">
       <Header />
-      <div className="content">
-        <div className="promotions">
-          <div className="slider"></div>
-        </div>
-        <div className="cartItems">
-          {items.map((item) => (
-            <Cart
-              key={item.dishName}
-              imgSrc={item.imgSrc}
-              description={item.description}
-              dishName={item.dishName}
-              price={item.price}
-            />
-          ))}
+      <div className="contentWrapper">
+        <div className="content">
+          <div className="promotions">
+            <div className="slider"></div>
+          </div>
+          <div className="cartItems">
+            {items.map((item) => (
+              <Cart
+                key={item.dishName}
+                imgSrc={item.imgSrc}
+                description={item.description}
+                dishName={item.dishName}
+                price={item.price}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

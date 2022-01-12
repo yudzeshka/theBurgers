@@ -1,0 +1,38 @@
+[
+  {
+    "imgSrc": "img/burgers/firm.jpg",
+    "description": "Marbled beef cutlet, Gouda and Cheddar cheese, lightly salted cucumber, Red Wine ketchup. Served with French fries and cole slow 360/100/60. g",
+    "dishName": "FIRM BURGER",
+    "price": "9$"
+  },
+  {
+    "imgSrc": "img/burgers/blek.jpg",
+    "description": "Marbled beef cutlet, poached egg, Cheddar cheese, bacon, pickled cucumbers, arugula, onion, Blackberry ketchup. Served with French fries and cole slow 400/100/60. g",
+    "dishName": "BLACK BURGER",
+    "price": "12$"
+  },
+  {
+    "imgSrc": "img/burgers/trufel.jpg",
+    "description": "Marbled beef cutlet, cheddar, spinach, onion, egg, hollandaise sauce, truffle oil. Served with French fries and cole slow. 350/100/60 g",
+    "dishName": "TRUFEL BURGER",
+    "price": "29$"
+  },
+  {
+    "imgSrc": "img/burgers/karne.jpg",
+    "description": "Marbled beef cutlet, flat iron steak, spinach, mozzarella cheese, grape-cherry and mustard sauce with horseradish. Served with French fries and cole slow. 400/100/60 g",
+    "dishName": "BURGER CARNE ASADA",
+    "price": "15$"
+  },
+  {
+    "imgSrc": "img/burgers/trio.jpg",
+    "description": "Three mini burgers: With marbled beef cutlet, mozzarella cheese and sun-dried tomatoes. Cheese and bacon. Cheese and mushrooms with French fries.390/100 g",
+    "dishName": "SLIDER TRIO",
+    "price": "13$"
+  },
+  {
+    "imgSrc": "img/burgers/avocado.jpg",
+    "description": "Marbled beef cutlet, Mozzarella cheese, yoghurt-lime sauce, avocado on buckwheat bun. 300 g",
+    "dishName": "AVOCADO BURGER",
+    "price": "14$"
+  }
+]
