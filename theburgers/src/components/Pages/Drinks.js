@@ -1,16 +1,15 @@
 import React from "react";
 import Header from "../Header";
 import Cart from "../Cart";
+import CarouselBox from "../CarouselBox";
 
 export default function Drinks({ items }) {
   return (
     <div className="menuPage">
       <Header />
       <div className="contentWrapper">
+        <CarouselBox className="carousel" />
         <div className="content">
-          <div className="promotions">
-            <div className="slider"></div>
-          </div>
           <div className="cartItems">
             {items.map((item) => (
               <Cart

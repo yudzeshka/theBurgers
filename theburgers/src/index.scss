@@ -138,7 +138,13 @@ body {
   //   display: flex;
   //   justify-content: center;
   //   width: 100%;
-
+  .carousel {
+    width: 66vw;
+    height: 550px;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+  }
   .content {
     background-color: lightgray;
     margin: 0 17vw;
@@ -165,8 +171,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
 
     .cart {
-      color: black;
-      background-color: darkgrey;
+      color: white;
+      background-image: url(img\brownBackground.jpg);
       margin: 7%;
       position: relative;
       border-radius: 7px;
