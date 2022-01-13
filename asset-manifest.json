@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/theBurgers/static/css/main.d19bfd05.css",
-    "main.js": "/theBurgers/static/js/main.f4aefd5f.js",
+    "main.js": "/theBurgers/static/js/main.9fdfe523.js",
     "static/media/brownBackground.jpg": "/theBurgers/static/media/brownBackground.f89b5d7089c4c8ebb044.jpg",
     "static/media/slide1.jpg": "/theBurgers/static/media/slide1.da1fe581c376d46318e7.jpg",
     "static/media/background5.jpg": "/theBurgers/static/media/background5.2d0e5b5d8abb1752fcd2.jpg",
@@ -12,10 +12,10 @@
     "static/media/slick.woff": "/theBurgers/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/theBurgers/index.html",
     "main.d19bfd05.css.map": "/theBurgers/static/css/main.d19bfd05.css.map",
-    "main.f4aefd5f.js.map": "/theBurgers/static/js/main.f4aefd5f.js.map"
+    "main.9fdfe523.js.map": "/theBurgers/static/js/main.9fdfe523.js.map"
   },
   "entrypoints": [
     "static/css/main.d19bfd05.css",
-    "static/js/main.f4aefd5f.js"
+    "static/js/main.9fdfe523.js"
   ]
 }
