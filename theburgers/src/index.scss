@@ -25,9 +25,10 @@ body {
   .header {
     display: flex;
     justify-content: space-between;
-    flex-basis: 8%;
+    flex-basis: 8vh;
     &:hover {
-      background-color: rgba($color: black, $alpha: 0.2);
+      background-color: rgba($color: black, $alpha: 0.4);
+      transition: background-color 0.4s ease-out;
     }
     nav {
       margin-left: 4rem;
@@ -36,6 +37,7 @@ body {
         cursor: pointer;
         &:hover {
           color: #cf0a2c;
+          transition: color 0.5s ease-out;
         }
       }
     }
@@ -79,8 +81,11 @@ body {
     button {
       border: 1px solid white;
       padding: 7px;
+      transition: all 0.2s ease-out;
       &:hover {
-        background-color: rgba($color: #fff, $alpha: 0.1);
+        background-color: rgba($color: #fff, $alpha: 0.2);
+        color: #cf0a2c;
+        transition: all 0.4s ease-out;
       }
     }
   }
@@ -97,9 +102,9 @@ body {
   .header {
     display: flex;
     justify-content: space-between;
-    flex-basis: 8%;
+    flex-basis: 8vh;
     &:hover {
-      background-color: rgba($color: black, $alpha: 0.2);
+      background-color: rgba($color: black, $alpha: 0.4);
     }
     nav {
       margin-left: 4rem;
@@ -136,7 +141,7 @@ body {
 
   .content {
     background-color: lightgray;
-    margin: 0 75px;
+    margin: 0 17vw;
 
     .promotions {
       padding: 40px 0;
@@ -164,10 +169,12 @@ body {
       background-color: darkgrey;
       margin: 7%;
       position: relative;
+      border-radius: 7px;
 
       .dishImg {
-        width: 100%;
+        width: 350px;
         height: 220px;
+        border-radius: 7px;
       }
 
       // .description {

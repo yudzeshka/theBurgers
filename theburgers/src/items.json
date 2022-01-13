@@ -107,5 +107,54 @@
     "description": "On rye bread with guacamole and cream cheese. 300 g",
     "dishName": "EGGS PASHOT WITH SALMON",
     "price": "7$"
+  },
+
+  {
+    "imgSrc": "img/drinks/limonad1.jpg",
+    "description": "500 ml",
+    "dishName": "LEMONADE TANDARIN-STRAWBERRY",
+    "price": "5$"
+  },
+  {
+    "imgSrc": "img/drinks/limonad2.jpg",
+    "description": "500 ml",
+    "dishName": "LEMONADE WITH PINE CONES",
+    "price": "5$"
+  },
+  {
+    "imgSrc": "img/drinks/limonad3.jpg",
+    "description": "500 ml",
+    "dishName": "LEMONADE CITRUS-MINT",
+    "price": "5$"
+  },
+  {
+    "imgSrc": "img/drinks/kola.jpg",
+    "description": "Soft drink, 330 ml",
+    "dishName": "COCA COLA",
+    "price": "2$"
+  },
+  {
+    "imgSrc": "img/drinks/7up.jpg",
+    "description": "Soft drink, 330 ml",
+    "dishName": "7UP",
+    "price": "2$"
+  },
+  {
+    "imgSrc": "img/drinks/mirinda.jpg",
+    "description": "Soft drink, 330 ml",
+    "dishName": "MIRINDA",
+    "price": "2$"
+  },
+  {
+    "imgSrc": "img/drinks/tonik.jpg",
+    "description": "Soft drink, 330 ml",
+    "dishName": "TONIC",
+    "price": "2$"
+  },
+  {
+    "imgSrc": "img/drinks/evervess.jpg",
+    "description": "Soft drink, 330 ml",
+    "dishName": "GINGER EL",
+    "price": "2$"
   }
 ]

@@ -28,6 +28,16 @@ function App() {
         setBreakfasts(json);
       });
   }, []);
+  const [drinks, setDrinks] = React.useState();
+  React.useEffect(() => {
+    fetch(`${API}/Drinks`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setDrinks(json);
+      });
+  }, []);
   return (
     <>
       <div className="wrapper">
@@ -46,7 +56,7 @@ function App() {
           <Route
             path="/drinks"
             exact
-            element={<Drinks items={burgers} />}
+            element={<Drinks items={drinks} />}
           ></Route>
         </Routes>
       </div>
