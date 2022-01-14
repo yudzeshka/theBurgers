@@ -1,23 +1,25 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import slide1 from "../img/slider/slide1.jpg";
+import slide2 from "../img/slider/slide2.jpg";
+import slide3 from "../img/slider/slide3.jpg";
 export default function CarouselBox() {
   const images = [
     {
       id: 1,
-      src: "../../img/slider/slide1.jpg",
+      src: slide1,
       alt: "Burger 1",
     },
     {
       id: 2,
-      src: "../../img/slider/slide2.jpg",
+      src: slide2,
       alt: "Burger 2",
     },
     {
       id: 3,
-      src: "../../img/slider/slide3.jpg",
+      src: slide3,
       alt: "Burger 3",
     },
   ];
