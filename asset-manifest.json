@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/theBurgers/static/css/main.d19bfd05.css",
-    "main.js": "/theBurgers/static/js/main.a77cf326.js",
+    "main.js": "/theBurgers/static/js/main.694e8113.js",
     "static/media/brownBackground.jpg": "/theBurgers/static/media/brownBackground.f89b5d7089c4c8ebb044.jpg",
+    "static/media/slide3.jpg": "/theBurgers/static/media/slide3.879c2019508963cbfd35.jpg",
+    "static/media/slide2.jpg": "/theBurgers/static/media/slide2.9b0a0ca1d5b0d8c56260.jpg",
     "static/media/slide1.jpg": "/theBurgers/static/media/slide1.da1fe581c376d46318e7.jpg",
     "static/media/background5.jpg": "/theBurgers/static/media/background5.2d0e5b5d8abb1752fcd2.jpg",
     "static/media/cart.png": "/theBurgers/static/media/cart.0f4c12c7360ada15a0e2.png",
@@ -12,10 +14,10 @@
     "static/media/slick.woff": "/theBurgers/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/theBurgers/index.html",
     "main.d19bfd05.css.map": "/theBurgers/static/css/main.d19bfd05.css.map",
-    "main.a77cf326.js.map": "/theBurgers/static/js/main.a77cf326.js.map"
+    "main.694e8113.js.map": "/theBurgers/static/js/main.694e8113.js.map"
   },
   "entrypoints": [
     "static/css/main.d19bfd05.css",
-    "static/js/main.a77cf326.js"
+    "static/js/main.694e8113.js"
   ]
 }
