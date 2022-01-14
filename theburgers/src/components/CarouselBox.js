@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import slide1 from "../img/slider/slide1.jpg";
 import slide2 from "../img/slider/slide2.jpg";
 import slide3 from "../img/slider/slide3.jpg";
+
 export default function CarouselBox() {
   const images = [
     {
@@ -34,7 +35,7 @@ export default function CarouselBox() {
     slidesToScroll: 1,
     lazyLoad: true,
   };
-  console.log(images);
+
   return (
     <div>
       <Slider className="carousel" {...settings}>
