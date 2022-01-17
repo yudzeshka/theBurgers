@@ -92,17 +92,17 @@ body {
 }
 
 .menuPage {
-  background-image: url(img\brownBackground.jpg);
-  background-size: cover;
+  background-image: url(/img/wood4.jpg);
+  background-size: contain;
   display: flex;
   width: 100vw;
   flex-direction: column;
-  background-color: rgb(218, 216, 216);
 
   .header {
     display: flex;
     justify-content: space-between;
     flex-basis: 8vh;
+    background-color: rgba($color: black, $alpha: 0.2);
     &:hover {
       background-color: rgba($color: black, $alpha: 0.4);
     }
@@ -146,7 +146,7 @@ body {
     padding-bottom: 20px;
   }
   .content {
-    background-color: lightgray;
+    background: rgba($color: lightgray, $alpha: 0.1);
     margin: 0 17vw;
 
     .promotions {
@@ -172,7 +172,8 @@ body {
 
     .cart {
       color: white;
-      background-image: url(img\brownBackground.jpg);
+      background-color: #0009;
+      // background: rgba($color: SaddleBrown, $alpha: 0.6);
       margin: 7%;
       position: relative;
       border-radius: 7px;
