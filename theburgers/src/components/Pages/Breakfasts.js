@@ -3,7 +3,18 @@ import Header from "../Header";
 import Cart from "../Cart";
 import CarouselBox from "../CarouselBox";
 
-export default function Breakfasts({ items }) {
+export default function Breakfasts() {
+  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
+  const [breakfasts, setBreakfasts] = React.useState([]);
+  React.useEffect(() => {
+    fetch(`${API}/Breakfasts`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setBreakfasts(json);
+      });
+  }, []);
   return (
     <div className="menuPage">
       <Header />
@@ -11,7 +22,7 @@ export default function Breakfasts({ items }) {
         <CarouselBox className="carousel" />
         <div className="content">
           <div className="cartItems">
-            {items.map((item) => (
+            {breakfasts.map((item) => (
               <Cart
                 key={item.dishName}
                 imgSrc={item.imgSrc}
