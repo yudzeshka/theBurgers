@@ -20,8 +20,8 @@ export default function Drinks() {
     <div className="menuPage">
       <Header />
       <div className="contentWrapper">
-        <CarouselBox className="carousel" />
         <div className="content">
+          <CarouselBox className="carousel" />
           <div className="cartItems">
             {drinks.map((item) => (
               <Cart
