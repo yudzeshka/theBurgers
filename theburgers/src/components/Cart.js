@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Cart({ imgSrc, description, dishName, price }) {
   return (
@@ -19,3 +20,10 @@ export default function Cart({ imgSrc, description, dishName, price }) {
     </div>
   );
 }
+
+Cart.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  dishName: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
