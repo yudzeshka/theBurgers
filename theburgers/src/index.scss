@@ -29,7 +29,7 @@ body {
       justify-content: space-between;
       flex-basis: 8vh;
       &:hover {
-        background-color: rgba($color: black, $alpha: 0.4);
+        background-color: rgba($color: black, $alpha: 0.6);
         transition: background-color 0.4s ease-out;
       }
       nav {
@@ -146,6 +146,10 @@ body {
       text-align: center;
       margin: auto;
       padding: 10px 0 0 0;
+
+      .slick-dots {
+        bottom: -15px;
+      }
     }
     .content {
       background: rgba($color: lightgray, $alpha: 0.1);
