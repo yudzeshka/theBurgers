@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header";
 export default function Home() {
   return (
-    <>
+    <div className="homePage">
       <Header />
       <div className="content">
         <div className="textWrapper">
@@ -13,6 +13,6 @@ export default function Home() {
           <button>RESERVATION</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

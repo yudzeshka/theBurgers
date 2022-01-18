@@ -19,8 +19,8 @@ export default function Burgers() {
     <div className="menuPage">
       <Header />
       <div className="contentWrapper">
-        <CarouselBox className="carousel" />
         <div className="content">
+          <CarouselBox className="carousel" />
           <div className="cartItems">
             {burgers.map((item) => (
               <Cart
