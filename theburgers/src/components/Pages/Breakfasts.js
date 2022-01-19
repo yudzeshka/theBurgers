@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header";
-import Cart from "../Cart";
+import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 
@@ -19,9 +19,9 @@ export default function Breakfasts() {
       <div className="contentWrapper">
         <div className="content">
           <CarouselBox className="carousel" />
-          <div className="cartItems">
+          <div className="cardItems">
             {breakfasts.map((item) => (
-              <Cart
+              <Card
                 key={item.dishName}
                 imgSrc={item.imgSrc}
                 description={item.description}

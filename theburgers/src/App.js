@@ -5,20 +5,10 @@ import Burgers from "./components/Pages/Burgers";
 import Home from "./components/Pages/Home";
 import Breakfasts from "./components/Pages/Breakfasts";
 import Drinks from "./components/Pages/Drinks";
+import Card from "./components/Card";
+import Cart from "./components/Pages/Cart";
 
 function App() {
-  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
-
-  const [drinks, setDrinks] = React.useState();
-  React.useEffect(() => {
-    fetch(`${API}/Drinks`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setDrinks(json);
-      });
-  }, []);
   return (
     <>
       <div className="wrapper">
@@ -26,11 +16,8 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/burgers" exact element={<Burgers />}></Route>
           <Route path="/breakfasts" exact element={<Breakfasts />}></Route>
-          <Route
-            path="/drinks"
-            exact
-            element={<Drinks items={drinks} />}
-          ></Route>
+          <Route path="/drinks" exact element={<Drinks />}></Route>
+          <Route path="/cart" exact element={<Cart />}></Route>
         </Routes>
       </div>
     </>

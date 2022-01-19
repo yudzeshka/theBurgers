@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-import Categories from "./Categories";
 
 export default function Header() {
   return (
@@ -25,8 +23,10 @@ export default function Header() {
         items={["HOME", "BURGERS", "BREAKFASTS", "DRINKS"]}
       /> */}
       <div className="flex items-center ml-4">
-        <div className="img"></div>
-        {/* <span>THE BRGRS</span> */}
+        <Link to={"/cart"}>
+          <div className="img"></div>
+          {/* <span>THE BRGRS</span> */}
+        </Link>
       </div>
     </div>
   );

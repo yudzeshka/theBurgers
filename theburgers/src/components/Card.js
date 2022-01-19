@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Cart({ imgSrc, description, dishName, price }) {
+export default function Card({ imgSrc, description, dishName, price }) {
   return (
-    <div className="cart flex flex-col justify-between ">
+    <div className="card flex flex-col justify-between ">
       <div className="relative group">
         <img className="dishImg" src={imgSrc} alt="#" />
         <div className="absolute w-full h-full top-0 left-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center text-white">
@@ -21,7 +21,7 @@ export default function Cart({ imgSrc, description, dishName, price }) {
   );
 }
 
-Cart.propTypes = {
+Card.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   dishName: PropTypes.string.isRequired,

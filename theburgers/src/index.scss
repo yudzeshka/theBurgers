@@ -171,12 +171,12 @@ body {
         }
       }
     }
-    .cartItems {
+    .cardItems {
       display: grid;
       gap: 1%;
       grid-template-columns: repeat(3, 1fr);
 
-      .cart {
+      .card {
         color: white;
         background-color: #0009;
         // background: rgba($color: SaddleBrown, $alpha: 0.6);
