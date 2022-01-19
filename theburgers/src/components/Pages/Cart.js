@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Header";
 import Card from "../Card";
-import CarouselBox from "../CarouselBox";
+
 import axios from "axios";
 
 export default function Cart() {
@@ -11,7 +11,7 @@ export default function Cart() {
   //   React.useEffect(() => {
   //     axios.get(`${API}/Drinks`).then(({ data }) => setDrinks(data));
   //   }, []);
-
+  const [cartItems, setCartItems] = React.useState([]);
   return (
     <div className="menuPage h-screen">
       <Header />

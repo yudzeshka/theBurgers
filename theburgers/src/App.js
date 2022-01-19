@@ -5,7 +5,6 @@ import Burgers from "./components/Pages/Burgers";
 import Home from "./components/Pages/Home";
 import Breakfasts from "./components/Pages/Breakfasts";
 import Drinks from "./components/Pages/Drinks";
-import Card from "./components/Card";
 import Cart from "./components/Pages/Cart";
 
 function App() {

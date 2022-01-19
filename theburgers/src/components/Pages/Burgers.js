@@ -10,6 +10,9 @@ export default function Burgers() {
   React.useEffect(() => {
     axios.get(`${API}/Burgers`).then(({ data }) => setBurgers(data));
   }, []);
+  const onAddToCart = (data) => {
+    axios.post(`${API}/Cart`);
+  };
   return (
     <div className="menuPage">
       <Header />
@@ -24,6 +27,7 @@ export default function Burgers() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
+                onAddToCart={onAddToCart}
               />
             ))}
           </div>

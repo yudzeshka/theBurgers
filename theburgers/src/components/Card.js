@@ -1,7 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Card({ imgSrc, description, dishName, price }) {
+export default function Card({
+  imgSrc,
+  description,
+  dishName,
+  price,
+  onAddToCart,
+}) {
+  const [isAdded, setIsAdded] = React.useState(false);
+  const onClickAdd = () => {
+    setIsAdded(!isAdded);
+    onAddToCart();
+  };
+
   return (
     <div className="card flex flex-col justify-between ">
       <div className="relative group">
@@ -14,7 +26,9 @@ export default function Card({ imgSrc, description, dishName, price }) {
         <div className="dishName block text-center font-bold ">{dishName}</div>
         <div className="flex flex-row justify-between items-center m-2">
           <b>{price}</b>
-          <button>Add to card</button>
+          <button className={isAdded ? "added" : ""} onClick={onClickAdd}>
+            {isAdded ? "Added" : "Add to card"}
+          </button>
         </div>
       </div>
     </div>
