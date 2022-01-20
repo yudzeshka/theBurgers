@@ -11,7 +11,8 @@ export default function Cart() {
   //   React.useEffect(() => {
   //     axios.get(`${API}/Drinks`).then(({ data }) => setDrinks(data));
   //   }, []);
-  const [cartItems, setCartItems] = React.useState([]);
+  // const [cartItems, setCartItems] = React.useState([]);
+  const onAddDish = (obj) => console.log(obj);
   return (
     <div className="menuPage h-screen">
       <Header />
@@ -26,6 +27,7 @@ export default function Cart() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
+                onAddToCart={(obj) => onAddDish(obj)}
               />
             ))}
           </div>
