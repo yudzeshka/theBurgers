@@ -10,14 +10,20 @@ export default function Cart() {
   React.useEffect(() => {
     axios.get(`${API}/Cart`).then(({ data }) => setCartItems(data));
   }, []);
+  const onRemove = ({ id }) => {
+    // console.log(id);
+    axios
+      .delete(`${API}/Cart/${id}`)
+      .then(axios.get(`${API}/Cart`).then(({ data }) => setCartItems(data)));
+  };
   const totalPrice = cartItems.price;
-  console.log(cartItems);
+
   return (
     <div className="menuPage h-screen overflow-auto">
       <Header />
-      <div className="contentWrapper h-full overflow-auto">
-        <div className="content h-full overflow-auto ">
-          <h1 className="text-center text-4xl">Your order:</h1>
+      <div className="contentWrapper">
+        <div className="content h-full">
+          <h1 className="text-center text-4xl font-thin">Your order:</h1>
           <div className="cardItems">
             {cartItems.map((item) => (
               <Card
@@ -26,13 +32,19 @@ export default function Cart() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
+                id={item.id}
+                onRemove={(id) => onRemove(id)}
               />
             ))}
           </div>
-          <h1 className="text-center text-4xl mt-10">Total: ${totalPrice} </h1>
-          <button className="text-center text-2xl border-solid">
-            Checkout
-          </button>
+          <div className="flex justify-between px-5">
+            <h1 className="text-center text-4xl font-thin ">
+              Total: ${totalPrice}{" "}
+            </h1>
+            <button className="text-center text-2xl border-double border-4 border-emerald-800 px-5">
+              Checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function Drinks() {
   return (
     <div className="menuPage">
       <Header />
-      <div className="contentWrapper">
+      <div className="contentWrapper min-h-screen">
         <div className="content">
           <CarouselBox className="carousel" />
           <div className="cardItems">

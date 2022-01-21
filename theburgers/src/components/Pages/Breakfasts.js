@@ -19,7 +19,7 @@ export default function Breakfasts() {
   return (
     <div className="menuPage">
       <Header />
-      <div className="contentWrapper">
+      <div className="contentWrapper min-h-screen">
         <div className="content">
           <CarouselBox className="carousel" />
           <div className="cardItems">
