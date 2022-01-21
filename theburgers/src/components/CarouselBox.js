@@ -31,7 +31,7 @@ export default function CarouselBox() {
     slidesToScroll: 1,
     lazyLoad: true,
   };
-  console.log(images);
+
   return (
     <div>
       <Slider className="carousel" {...settings}>

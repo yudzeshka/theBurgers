@@ -13,6 +13,9 @@ export default function Breakfasts() {
       setBreakfasts(data);
     });
   }, []);
+  const onAddToCart = (obj) => {
+    axios.post(`${API}/Cart`, obj);
+  };
   return (
     <div className="menuPage">
       <Header />
@@ -27,6 +30,7 @@ export default function Breakfasts() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
+                onAddToCart={(obj) => onAddToCart(obj)}
               />
             ))}
           </div>

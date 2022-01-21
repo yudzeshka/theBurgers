@@ -7,12 +7,17 @@ import axios from "axios";
 export default function Burgers() {
   const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
   const [burgers, setBurgers] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   React.useEffect(() => {
     axios.get(`${API}/Burgers`).then(({ data }) => setBurgers(data));
   }, []);
-  // const onAddToCart = () => {
-  //   axios.post(`${API}/Cart`);
-  // };
+  const onAddToCart = (obj) => {
+    // setCartItems([...cartItems, obj])
+    axios.post(`${API}/Cart`, obj);
+  };
+
+  // const onAddToCart = (obj) => setCartItems([...cartItems, obj]);
+  // console.log(cartItems);
   return (
     <div className="menuPage">
       <Header />
@@ -27,7 +32,7 @@ export default function Burgers() {
                 description={item.description}
                 dishName={item.dishName}
                 price={item.price}
-                onAddToCart={(obj) => console.log(obj)}
+                onAddToCart={(obj) => onAddToCart(obj)}
               />
             ))}
           </div>
