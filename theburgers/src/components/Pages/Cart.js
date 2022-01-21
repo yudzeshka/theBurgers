@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../Header";
 import Card from "../Card";
-
 import axios from "axios";
 
 export default function Cart() {
@@ -11,12 +10,14 @@ export default function Cart() {
   React.useEffect(() => {
     axios.get(`${API}/Cart`).then(({ data }) => setCartItems(data));
   }, []);
+  const totalPrice = cartItems.price;
+  console.log(cartItems);
   return (
-    <div className="menuPage h-screen">
+    <div className="menuPage h-screen overflow-auto">
       <Header />
-      <div className="contentWrapper h-full">
-        <div className="content h-full  ">
-          <h1 className="text-center text-4xl">Cart</h1>
+      <div className="contentWrapper h-full overflow-auto">
+        <div className="content h-full overflow-auto ">
+          <h1 className="text-center text-4xl">Your order:</h1>
           <div className="cardItems">
             {cartItems.map((item) => (
               <Card
@@ -28,6 +29,10 @@ export default function Cart() {
               />
             ))}
           </div>
+          <h1 className="text-center text-4xl mt-10">Total: ${totalPrice} </h1>
+          <button className="text-center text-2xl border-solid">
+            Checkout
+          </button>
         </div>
       </div>
     </div>
