@@ -3,19 +3,29 @@ import Header from "../Header";
 import Card from "../Card";
 import axios from "axios";
 
+async function getCartItems(api) {
+  return axios.get(`${api}/Cart`).then(({ data }) => data);
+}
+
+async function removeCartItems(api, id) {
+  await axios.delete(`${api}/Cart/${id}`);
+}
+
 export default function Cart() {
   const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
 
   const [cartItems, setCartItems] = React.useState([]);
-  React.useEffect(() => {
-    axios.get(`${API}/Cart`).then(({ data }) => setCartItems(data));
+  React.useEffect(async () => {
+    const cartItems = await getCartItems(API);
+    setCartItems(cartItems);
   }, []);
-  const onRemove = ({ id }) => {
-    // console.log(id);
-    axios
-      .delete(`${API}/Cart/${id}`)
-      .then(axios.get(`${API}/Cart`).then(({ data }) => setCartItems(data)));
+
+  const onRemove = async ({ id }) => {
+    await removeCartItems(API, id);
+    const cartItems = await getCartItems(API);
+    setCartItems(cartItems);
   };
+
   const totalPrice = cartItems.price;
 
   return (
