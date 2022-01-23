@@ -23,7 +23,7 @@ export default function Cart({ API }) {
     const cartItems = await getCartItems(API);
     setCartItems(cartItems);
   };
-
+  const isCart = true;
   const totalPrice = cartItems.price;
 
   return (
@@ -42,6 +42,7 @@ export default function Cart({ API }) {
                 price={item.price}
                 id={item.id}
                 onRemove={(id) => onRemove(id)}
+                isCart={isCart}
               />
             ))}
           </div>

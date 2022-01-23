@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Drinks({ API }) {
   const [drinks, setDrinks] = React.useState([]);
+  const isCart = false;
   React.useEffect(() => {
     axios.get(`${API}/Drinks`).then(({ data }) => setDrinks(data));
   }, []);
@@ -27,6 +28,7 @@ export default function Drinks({ API }) {
                 dishName={item.dishName}
                 price={item.price}
                 onAddToCart={(obj) => onAddToCart(obj)}
+                isCart={isCart}
               />
             ))}
           </div>
