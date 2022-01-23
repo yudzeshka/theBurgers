@@ -4,8 +4,7 @@ import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 
-export default function Breakfasts() {
-  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
+export default function Breakfasts({ API }) {
   const [breakfasts, setBreakfasts] = React.useState([]);
 
   React.useEffect(() => {

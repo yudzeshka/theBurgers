@@ -11,9 +11,7 @@ async function removeCartItems(api, id) {
   await axios.delete(`${api}/Cart/${id}`);
 }
 
-export default function Cart() {
-  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
-
+export default function Cart({ API }) {
   const [cartItems, setCartItems] = React.useState([]);
   React.useEffect(async () => {
     const cartItems = await getCartItems(API);
