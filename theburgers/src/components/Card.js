@@ -33,7 +33,7 @@ export default function Card({
       <div className="flex flex-col justify-between ">
         <div className="dishName block text-center font-bold ">{dishName}</div>
         <div className="flex flex-row justify-between items-center m-2">
-          <b>{price}</b>
+          <b>{`${price}$`}</b>
           {isCart ? (
             ""
           ) : (
@@ -52,5 +52,5 @@ Card.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   dishName: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };

@@ -24,7 +24,8 @@ export default function Cart({ API }) {
     setCartItems(cartItems);
   };
   const isCart = true;
-  const totalPrice = cartItems.price;
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
+  // const totalPrice = cartItems.reduce(());
 
   return (
     <div className="menuPage h-screen overflow-auto">
@@ -48,7 +49,7 @@ export default function Cart({ API }) {
           </div>
           <div className="flex justify-between px-5">
             <h1 className="text-center text-4xl font-thin ">
-              Total: ${totalPrice}{" "}
+              Total: ${totalPrice}
             </h1>
             <button className="text-center text-2xl border-double border-4 border-emerald-800 px-5">
               Checkout
