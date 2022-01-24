@@ -136,10 +136,7 @@ body {
         }
       }
     }
-    // .contentWrapper {
-    //   display: flex;
-    //   justify-content: center;
-    //   width: 100%;
+
     .carousel {
       width: 47vw;
       height: auto;
@@ -202,19 +199,6 @@ body {
         .added {
           border-color: chartreuse;
         }
-        // .description {
-        //   position: absolute;
-        //   visibility: visible;
-
-        //   top: 0;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 100%;
-        //   &:hover {
-        //     // visibility: hidden;
-        //     background-color: rgba($color: black, $alpha: 0.1);
-        //   }
-        // }
       }
     }
   }
