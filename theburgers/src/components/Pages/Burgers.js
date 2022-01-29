@@ -4,22 +4,20 @@ import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import { setBurgers } from "../../redux/actions/burgers";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Burgers({ API }) {
-  const [burgers, setBurgers] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const dispatch = useDispatch();
+  const items = useSelector(({ burgers }) => burgers.items);
+  const [isLoading, setIsLoading] = React.useState(false);
   const isCart = false;
 
   React.useEffect(() => {
-    console.log("start loading");
-    axios
-      .get(`${API}/Burgers`)
-      .then(({ data }) => setBurgers(data))
-      .then(
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1300)
-      );
+    axios.get(`${API}/Burgers`).then(({ data }) => {
+      dispatch(setBurgers(data));
+    });
+
     console.log("finish loading");
   }, []);
   const onAddToCart = (obj) => {
@@ -39,17 +37,18 @@ export default function Burgers({ API }) {
           <div className="content">
             <CarouselBox className="carousel" />
             <div className="cardItems">
-              {burgers.map((item) => (
-                <Card
-                  key={item.dishName}
-                  imgSrc={item.imgSrc}
-                  description={item.description}
-                  dishName={item.dishName}
-                  price={item.price}
-                  onAddToCart={(obj) => onAddToCart(obj)}
-                  isCart={isCart}
-                />
-              ))}
+              {items &&
+                items.map((item) => (
+                  <Card
+                    key={item.dishName}
+                    imgSrc={item.imgSrc}
+                    description={item.description}
+                    dishName={item.dishName}
+                    price={item.price}
+                    onAddToCart={(obj) => onAddToCart(obj)}
+                    isCart={isCart}
+                  />
+                ))}
             </div>
           </div>
         </div>

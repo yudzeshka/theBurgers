@@ -4,17 +4,20 @@ import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import { useDispatch, useSelector } from "react-redux";
+import { setBreakfasts } from "../../redux/actions/breakfasts";
 
 export default function Breakfasts({ API }) {
-  const [breakfasts, setBreakfasts] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-
+  const dispatch = useDispatch();
+  const items = useSelector(({ breakfasts }) => breakfasts.items);
+  const [isLoading, setIsLoading] = React.useState(false);
   const isCart = false;
+
   React.useEffect(() => {
     axios
       .get(`${API}/Breakfasts`)
       .then(({ data }) => {
-        setBreakfasts(data);
+        dispatch(setBreakfasts(data));
       })
       .then(
         setTimeout(() => {
@@ -39,17 +42,18 @@ export default function Breakfasts({ API }) {
           <div className="content">
             <CarouselBox className="carousel" />
             <div className="cardItems">
-              {breakfasts.map((item) => (
-                <Card
-                  key={item.dishName}
-                  imgSrc={item.imgSrc}
-                  description={item.description}
-                  dishName={item.dishName}
-                  price={item.price}
-                  onAddToCart={(obj) => onAddToCart(obj)}
-                  isCart={isCart}
-                />
-              ))}
+              {items &&
+                items.map((item) => (
+                  <Card
+                    key={item.dishName}
+                    imgSrc={item.imgSrc}
+                    description={item.description}
+                    dishName={item.dishName}
+                    price={item.price}
+                    onAddToCart={(obj) => onAddToCart(obj)}
+                    isCart={isCart}
+                  />
+                ))}
             </div>
           </div>
         </div>

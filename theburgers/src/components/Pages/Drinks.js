@@ -4,15 +4,18 @@ import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrinks } from "../../redux/actions/drinks";
 
 export default function Drinks({ API }) {
-  const [drinks, setDrinks] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const dispatch = useDispatch();
+  const items = useSelector(({ drinks }) => drinks.items);
+  const [isLoading, setIsLoading] = React.useState(false);
   const isCart = false;
   React.useEffect(() => {
     axios
       .get(`${API}/Drinks`)
-      .then(({ data }) => setDrinks(data))
+      .then(({ data }) => dispatch(setDrinks(data)))
       .then(
         setTimeout(() => {
           setIsLoading(false);
@@ -36,17 +39,18 @@ export default function Drinks({ API }) {
           <div className="content">
             <CarouselBox className="carousel" />
             <div className="cardItems">
-              {drinks.map((item) => (
-                <Card
-                  key={item.dishName}
-                  imgSrc={item.imgSrc}
-                  description={item.description}
-                  dishName={item.dishName}
-                  price={item.price}
-                  onAddToCart={(obj) => onAddToCart(obj)}
-                  isCart={isCart}
-                />
-              ))}
+              {items &&
+                items.map((item) => (
+                  <Card
+                    key={item.dishName}
+                    imgSrc={item.imgSrc}
+                    description={item.description}
+                    dishName={item.dishName}
+                    price={item.price}
+                    onAddToCart={(obj) => onAddToCart(obj)}
+                    isCart={isCart}
+                  />
+                ))}
             </div>
           </div>
         </div>
