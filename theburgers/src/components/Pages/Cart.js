@@ -3,6 +3,8 @@ import Header from "../Header";
 import Card from "../Card";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import { setCart } from "../../redux/actions/cart";
+import { useSelector, useDispatch } from "react-redux";
 
 async function getCartItems(api) {
   return axios.get(`${api}/Cart`).then(({ data }) => data);
@@ -13,6 +15,7 @@ async function removeCartItems(api, id) {
 }
 
 export default function Cart({ API }) {
+  const dispatch = useDispatch();
   const [cartItems, setCartItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(async () => {
