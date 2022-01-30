@@ -3,12 +3,7 @@ export const setCart = (items) => ({
   payload: items,
 });
 
-export const addBurgers = (burgersObj) => ({
-  type: "ADD_BURGERS",
-  payload: burgersObj,
-});
-
-export const addDrinks = (drinksObj) => ({
-  type: "ADD_DRINKS",
-  payload: drinksObj,
+export const addDishToCart = (Obj) => ({
+  type: "ADD_DISH",
+  payload: Obj,
 });

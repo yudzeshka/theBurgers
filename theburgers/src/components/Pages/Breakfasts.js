@@ -6,6 +6,7 @@ import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { useDispatch, useSelector } from "react-redux";
 import { setBreakfasts } from "../../redux/actions/breakfasts";
+import { addDishToCart } from "../../redux/actions/cart";
 
 export default function Breakfasts({ API }) {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ export default function Breakfasts({ API }) {
   }, []);
   const onAddToCart = (obj) => {
     axios.post(`${API}/Cart`, obj);
+    dispatch(addDishToCart(obj));
   };
   return (
     <div className="menuPage">

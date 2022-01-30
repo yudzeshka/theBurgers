@@ -13,8 +13,8 @@ const cart = (state = initialState, action) => {
   return state;
 };
 
-const addBurgers = (state = initialState, action) => {
-  if (action.type === "ADD_BURGERS") {
+const addDishToCart = (state = initialState, action) => {
+  if (action.type === "ADD_DISH") {
     return {
       ...state,
       items: [...state.items, action.payload],
@@ -23,14 +23,4 @@ const addBurgers = (state = initialState, action) => {
   return state;
 };
 
-const addDrinks = (state = initialState, action) => {
-  if (action.type === "ADD_DRINKS") {
-    return {
-      ...state,
-      items: [...state.items, action.payload],
-    };
-  }
-  return state;
-};
-
-export default (cart, addBurgers, addDrinks);
+export default (cart, addDishToCart);
