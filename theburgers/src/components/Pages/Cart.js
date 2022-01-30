@@ -5,6 +5,7 @@ import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { setCart } from "../../redux/actions/cart";
 import { useSelector, useDispatch } from "react-redux";
+import CartItem from "../CartItem";
 
 async function getCartItems(api) {
   return axios.get(`${api}/Cart`).then(({ data }) => data);
@@ -52,9 +53,9 @@ export default function Cart({ API }) {
         <div className="contentWrapper">
           <div className="content h-full">
             <h1 className="text-center text-4xl font-thin">Your order:</h1>
-            <div className="cardItems">
+            <div className="flex flex-col">
               {cartItems.map((item) => (
-                <Card
+                <CartItem
                   key={item.dishName}
                   imgSrc={item.imgSrc}
                   description={item.description}
