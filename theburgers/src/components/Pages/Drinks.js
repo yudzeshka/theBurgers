@@ -2,11 +2,10 @@ import React from "react";
 import Header from "../Header";
 import Card from "../Card";
 import CarouselBox from "../CarouselBox";
-import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDrinks, setDrinks } from "../../redux/actions/drinks";
-import { addDishToCart } from "../../redux/actions/cart";
+import { fetchDrinks } from "../../redux/actions/drinks";
+import { postDishToCart } from "../../redux/actions/cart";
 
 export default function Drinks({ API }) {
   const dispatch = useDispatch();
@@ -17,8 +16,7 @@ export default function Drinks({ API }) {
     dispatch(fetchDrinks(API));
   }, []);
   const onAddToCart = (obj) => {
-    axios.post(`${API}/Cart`, obj);
-    dispatch(addDishToCart(obj));
+    dispatch(postDishToCart(API, obj));
   };
   return (
     <div className="menuPage">
