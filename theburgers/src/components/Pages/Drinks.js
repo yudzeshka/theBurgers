@@ -10,12 +10,10 @@ import { postDishToCart } from "../../redux/actions/cart";
 export default function Drinks({ API }) {
   const dispatch = useDispatch();
   const items = useSelector(({ drinks }) => drinks.items);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const isLoaded = useSelector(({ drinks }) => drinks.isLoaded);
   const isCart = false;
   React.useEffect(() => {
-    if (!items.length) {
-      dispatch(fetchDrinks(API));
-    }
+    if (!items.length) dispatch(fetchDrinks(API));
   }, []);
   const onAddToCart = (obj) => {
     dispatch(postDishToCart(API, obj));
@@ -23,10 +21,10 @@ export default function Drinks({ API }) {
   return (
     <div className="menuPage">
       <Header />
-      {isLoading ? (
+      {!isLoaded ? (
         <div className="flex bg-black/50 min-h-[92vh]">
           <div className="m-auto  ">
-            <HollowDotsSpinner size={30} />
+            <HollowDotsSpinner size={30} animationDuration={750} />
           </div>
         </div>
       ) : (

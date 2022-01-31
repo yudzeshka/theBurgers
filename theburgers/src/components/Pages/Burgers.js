@@ -10,7 +10,7 @@ import { postDishToCart } from "../../redux/actions/cart";
 export default function Burgers({ API }) {
   const dispatch = useDispatch();
   const items = useSelector(({ burgers }) => burgers.items);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const isLoaded = useSelector(({ burgers }) => burgers.isLoaded);
   const isCart = false;
 
   React.useEffect(() => {
@@ -24,10 +24,10 @@ export default function Burgers({ API }) {
   return (
     <div className="menuPage">
       <Header />
-      {isLoading ? (
+      {!isLoaded ? (
         <div className="flex bg-black/50 min-h-[92vh]">
           <div className="m-auto  ">
-            <HollowDotsSpinner size={30} />
+            <HollowDotsSpinner size={30} animationDuration={750} />
           </div>
         </div>
       ) : (
