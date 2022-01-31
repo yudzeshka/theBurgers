@@ -13,7 +13,9 @@ export default function Drinks({ API }) {
   const [isLoading, setIsLoading] = React.useState(false);
   const isCart = false;
   React.useEffect(() => {
-    dispatch(fetchDrinks(API));
+    if (!items.length) {
+      dispatch(fetchDrinks(API));
+    }
   }, []);
   const onAddToCart = (obj) => {
     dispatch(postDishToCart(API, obj));

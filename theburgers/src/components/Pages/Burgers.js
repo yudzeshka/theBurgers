@@ -14,7 +14,9 @@ export default function Burgers({ API }) {
   const isCart = false;
 
   React.useEffect(() => {
-    dispatch(fetchBurgers(API));
+    if (!items.length) {
+      dispatch(fetchBurgers(API));
+    }
   }, []);
   const onAddToCart = (obj) => {
     dispatch(postDishToCart(API, obj));
