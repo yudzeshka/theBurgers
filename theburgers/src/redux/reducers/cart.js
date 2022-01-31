@@ -8,19 +8,10 @@ const cart = (state = initialState, action) => {
     return {
       ...state,
       items: action.payload,
+      isLoaded: true,
     };
   }
   return state;
 };
 
-const addDishToCart = (state = initialState, action) => {
-  if (action.type === "ADD_DISH") {
-    return {
-      ...state,
-      items: [...state.items, action.payload],
-    };
-  }
-  return state;
-};
-
-export default (cart, addDishToCart);
+export default cart;

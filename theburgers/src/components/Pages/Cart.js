@@ -2,46 +2,55 @@ import React from "react";
 import Header from "../Header";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import { setCart } from "../../redux/actions/cart";
+import { fetchCart, removeCartItems } from "../../redux/actions/cart";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
 
-async function getCartItems(api) {
-  return axios.get(`${api}/Cart`).then(({ data }) => data);
-}
+// async function getCartItems(api) {
+//   return axios.get(`${api}/Cart`).then(({ data }) => data);
+// }
 
-async function removeCartItems(api, id) {
-  await axios.delete(`${api}/Cart/${id}`);
-}
+// async function removeCartItems(api, id) {
+//   await axios.delete(`${api}/Cart/${id}`);
+// }
 
 export default function Cart({ API }) {
+  const items = useSelector(({ cart }) => cart.items);
+  const isLoaded = useSelector(({ cart }) => cart.isLoaded);
   const dispatch = useDispatch();
-  const [cartItems, setCartItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
-  React.useEffect(async () => {
-    const cartItems = await getCartItems(API);
-    setCartItems(cartItems);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1300);
+  // const [cartItems, setCartItems] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
+  React.useEffect(() => {
+    dispatch(fetchCart(API));
   }, []);
 
-  const onRemove = async ({ id }) => {
-    setIsLoading(true);
-    await removeCartItems(API, id);
-    const cartItems = await getCartItems(API);
-    setCartItems(cartItems);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
+  const onRemove = ({ id }) => {
+    dispatch(removeCartItems(API, id));
   };
-  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
-  // const totalPrice = cartItems.reduce(());
+
+  // React.useEffect(async () => {
+  //   const cartItems = await getCartItems(API);
+  //   setCartItems(cartItems);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1300);
+  // }, []);
+
+  // const onRemove = async ({ id }) => {
+  //   setIsLoading(true);
+  //   await removeCartItems(API, id);
+  //   const cartItems = await getCartItems(API);
+  //   setCartItems(cartItems);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 500);
+  // };
+  const totalPrice = items.reduce((sum, obj) => obj.price + sum, 0);
 
   return (
     <div className="menuPage h-screen overflow-auto">
       <Header />
-      {isLoading ? (
+      {!isLoaded ? (
         <div className="flex bg-black/50 min-h-[92vh]">
           <div className="m-auto  ">
             <HollowDotsSpinner size={30} />
@@ -52,17 +61,18 @@ export default function Cart({ API }) {
           <div className="content h-full">
             <h1 className="text-center text-4xl font-thin">Your order:</h1>
             <div className="flex flex-col">
-              {cartItems.map((item) => (
-                <CartItem
-                  key={`${item.id}${item.dishName}`}
-                  imgSrc={item.imgSrc}
-                  description={item.description}
-                  dishName={item.dishName}
-                  price={item.price}
-                  id={item.id}
-                  onRemove={(id) => onRemove(id)}
-                />
-              ))}
+              {items &&
+                items.map((item) => (
+                  <CartItem
+                    key={`${item.id}${item.dishName}`}
+                    imgSrc={item.imgSrc}
+                    description={item.description}
+                    dishName={item.dishName}
+                    price={item.price}
+                    id={item.id}
+                    onRemove={(id) => onRemove(id)}
+                  />
+                ))}
             </div>
             <div className="flex justify-between px-5">
               <h1 className="text-center text-4xl font-thin ">
