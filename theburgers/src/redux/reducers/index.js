@@ -2,17 +2,12 @@ import { combineReducers } from "redux";
 import burgersReducer from "./burgers";
 import drinksReducer from "./drinks";
 import breakfastsReducer from "./breakfasts";
-import cart from "./cart";
-import addDishToCart from "./addDishToCart";
-import deleteDishFromCart from "./deleteDishFromCart";
-
+import cartReducer from "./cart";
 const rootReducer = combineReducers({
   burgers: burgersReducer,
   drinks: drinksReducer,
   breakfasts: breakfastsReducer,
-  cart: cart,
-  addDishToCart: addDishToCart,
-  deleteDishFromCart: deleteDishFromCart,
+  cart: cartReducer,
 });
 
 export default rootReducer;

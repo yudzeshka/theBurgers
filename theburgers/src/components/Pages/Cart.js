@@ -2,49 +2,22 @@ import React from "react";
 import Header from "../Header";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import { fetchCart, removeCartItems } from "../../redux/actions/cart";
+import { deleteDishFromCart, setCart } from "../../redux/actions/cart";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
 
-// async function getCartItems(api) {
-//   return axios.get(`${api}/Cart`).then(({ data }) => data);
-// }
-
-// async function removeCartItems(api, id) {
-//   await axios.delete(`${api}/Cart/${id}`);
-// }
-
-export default function Cart({ API }) {
+export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ cart }) => cart.isLoaded);
   const dispatch = useDispatch();
-  // const [cartItems, setCartItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
   React.useEffect(() => {
-    dispatch(fetchCart(API));
+    dispatch(setCart(items));
   }, []);
 
   const onRemove = ({ id }) => {
-    dispatch(removeCartItems(API, id));
+    dispatch(deleteDishFromCart(id));
   };
 
-  // React.useEffect(async () => {
-  //   const cartItems = await getCartItems(API);
-  //   setCartItems(cartItems);
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1300);
-  // }, []);
-
-  // const onRemove = async ({ id }) => {
-  //   setIsLoading(true);
-  //   await removeCartItems(API, id);
-  //   const cartItems = await getCartItems(API);
-  //   setCartItems(cartItems);
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 500);
-  // };
   const totalPrice = items.reduce((sum, obj) => obj.price + sum, 0);
 
   return (

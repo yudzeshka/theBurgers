@@ -21,7 +21,6 @@ export default function Card({
     onRemove({ id });
   };
 
-  // const () => onClickRemove(id)
   return (
     <div className="card flex flex-col justify-between ">
       <div className="relative group">

@@ -5,7 +5,7 @@ import CarouselBox from "../CarouselBox";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBreakfasts } from "../../redux/actions/breakfasts";
-import { postDishToCart } from "../../redux/actions/cart";
+import { addDishToCart } from "../../redux/actions/cart";
 
 export default function Breakfasts({ API }) {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export default function Breakfasts({ API }) {
     }
   }, []);
   const onAddToCart = (obj) => {
-    dispatch(postDishToCart(API, obj));
+    dispatch(addDishToCart(obj));
   };
 
   return (

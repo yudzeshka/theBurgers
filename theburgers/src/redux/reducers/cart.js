@@ -3,15 +3,29 @@ const initialState = {
   isLoaded: false,
 };
 
-const cart = (state = initialState, action) => {
-  if (action.type === "SET_CART") {
-    return {
-      ...state,
-      items: action.payload,
-      isLoaded: true,
-    };
+const cartReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SET_CART":
+      return {
+        ...state,
+        items: action.payload,
+        isLoaded: true,
+      };
+    case "ADD_DISH":
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+      };
+    case "DELETE_DISH":
+      return {
+        ...state,
+        items: [...state.items].filter(function (item) {
+          return item.id !== action.payload;
+        }),
+      };
+    default:
+      return state;
   }
-  return state;
 };
 
-export default cart;
+export default cartReducer;
