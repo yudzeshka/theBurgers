@@ -5,7 +5,7 @@ import CarouselBox from "../CarouselBox";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { useDispatch, useSelector } from "react-redux";
-import { setBreakfasts } from "../../redux/actions/breakfasts";
+import { fetchBreakfasts, setBreakfasts } from "../../redux/actions/breakfasts";
 import { addDishToCart } from "../../redux/actions/cart";
 
 export default function Breakfasts({ API }) {
@@ -15,16 +15,7 @@ export default function Breakfasts({ API }) {
   const isCart = false;
 
   React.useEffect(() => {
-    axios
-      .get(`${API}/Breakfasts`)
-      .then(({ data }) => {
-        dispatch(setBreakfasts(data));
-      })
-      .then(
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1300)
-      );
+    dispatch(fetchBreakfasts(API));
   }, []);
   const onAddToCart = (obj) => {
     axios.post(`${API}/Cart`, obj);

@@ -6,26 +6,17 @@ export default function CartItem({
   description,
   dishName,
   price,
-  onAddToCart,
   id,
   onRemove,
-  isCart,
 }) {
-  // const [isAdded, setIsAdded] = React.useState(false);
+  const onClickRemove = () => {
+    onRemove({ id });
+  };
 
-  // const onClickAdd = () => {
-  //   onAddToCart({ imgSrc, description, dishName, price });
-  //   setIsAdded(!isAdded);
-  // };
-  // const onClickRemove = () => {
-  //   onRemove({ id });
-  // };
-
-  // const () => onClickRemove(id)
   return (
     <div className="flex flex-row justify-between m-4 border-solid border-2 border-black rounded-lg">
       <div className="flex flex-row">
-        <img className="h-30 w-40" src={imgSrc} alt={`${dishName} photo`} />
+        <img className="h-30 w-40" src={imgSrc} alt={`${dishName}`} />
         <div className="flex flex-col items-start">
           <h3>{dishName}</h3>
           <p>{description}</p>
@@ -38,7 +29,10 @@ export default function CartItem({
           <button className="p-2 rounded-full bg-zinc-200/20">+</button>
         </div>
         <b className="p-2 ">{`${price}$`}</b>
-        <button className="p-1 rounded-full absolute top-0 right-0 bg-zinc-200/20">
+        <button
+          className="p-1 rounded-full absolute top-0 right-0 bg-zinc-200/20"
+          onClick={onClickRemove}
+        >
           X
         </button>
       </div>
@@ -68,9 +62,9 @@ export default function CartItem({
   // </div>
 }
 
-// CartItem.propTypes = {
-//   imgSrc: PropTypes.string.isRequired,
-//   description: PropTypes.string.isRequired,
-//   dishName: PropTypes.string.isRequired,
-//   price: PropTypes.number.isRequired,
-// };
+CartItem.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  dishName: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};

@@ -4,7 +4,7 @@ import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import { setBurgers } from "../../redux/actions/burgers";
+import { setBurgers, fetchBurgers } from "../../redux/actions/burgers";
 import { useSelector, useDispatch } from "react-redux";
 import { addDishToCart } from "../../redux/actions/cart";
 
@@ -15,11 +15,7 @@ export default function Burgers({ API }) {
   const isCart = false;
 
   React.useEffect(() => {
-    axios.get(`${API}/Burgers`).then(({ data }) => {
-      dispatch(setBurgers(data));
-    });
-
-    console.log("finish loading");
+    dispatch(fetchBurgers(API));
   }, []);
   const onAddToCart = (obj) => {
     axios.post(`${API}/Cart`, obj);

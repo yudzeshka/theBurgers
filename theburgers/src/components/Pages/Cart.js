@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../Header";
-import Card from "../Card";
 import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
 import { setCart } from "../../redux/actions/cart";
@@ -36,7 +35,6 @@ export default function Cart({ API }) {
       setIsLoading(false);
     }, 500);
   };
-  const isCart = true;
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
   // const totalPrice = cartItems.reduce(());
 
@@ -56,14 +54,13 @@ export default function Cart({ API }) {
             <div className="flex flex-col">
               {cartItems.map((item) => (
                 <CartItem
-                  key={item.dishName}
+                  key={`${item.id}${item.dishName}`}
                   imgSrc={item.imgSrc}
                   description={item.description}
                   dishName={item.dishName}
                   price={item.price}
                   id={item.id}
                   onRemove={(id) => onRemove(id)}
-                  isCart={isCart}
                 />
               ))}
             </div>
