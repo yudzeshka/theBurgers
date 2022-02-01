@@ -8,7 +8,6 @@ export default function Card({
   price,
   onAddToCart,
   id,
-  onRemove,
   isCart,
 }) {
   const [isAdded, setIsAdded] = React.useState(false);
@@ -16,10 +15,6 @@ export default function Card({
   const onClickAdd = () => {
     onAddToCart({ imgSrc, description, dishName, price, id });
     setIsAdded(!isAdded);
-  };
-  const onClickRemove = () => {
-    console.log("on card", id);
-    onRemove({ id });
   };
 
   return (
@@ -41,7 +36,6 @@ export default function Card({
               {isAdded ? "Added" : "Add to card"}
             </button>
           )}
-          {isCart ? <button onClick={onClickRemove}> remove</button> : ""}
         </div>
       </div>
     </div>

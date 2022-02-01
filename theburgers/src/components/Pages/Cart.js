@@ -16,7 +16,6 @@ export default function Cart() {
   }, []);
 
   const onRemove = ({ id }) => {
-    console.log(id);
     dispatch(deleteDishFromCart(id));
   };
 

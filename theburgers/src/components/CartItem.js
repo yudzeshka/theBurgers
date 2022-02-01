@@ -10,10 +10,16 @@ export default function CartItem({
   onRemove,
 }) {
   const onClickRemove = () => {
-    console.log("on card", id);
     onRemove({ id });
   };
-
+  const [counter, setCounter] = React.useState(5);
+  const onClickPlus = () => {
+    setCounter(counter + 1);
+  };
+  const onClickMinus = () => {
+    setCounter(counter - 1);
+  };
+  const fullPrice = price * counter;
   return (
     <div className="flex flex-row justify-between m-4 border-solid border-2 border-black rounded-lg">
       <div className="flex flex-row">
@@ -25,11 +31,22 @@ export default function CartItem({
       </div>
       <div className="flex flex-row justify-center items-center relative ">
         <div className="flex flex-row justify-center items-center">
-          <button className="p-2 rounded-full bg-zinc-200/20">-</button>
-          <p className="p-2 rounded-full">0</p>
-          <button className="p-2 rounded-full bg-zinc-200/20">+</button>
+          <button
+            className="p-2 rounded-full bg-zinc-200/20"
+            onClick={onClickMinus}
+            disabled={counter === 0}
+          >
+            -
+          </button>
+          <p className="p-2 rounded-full">{counter}</p>
+          <button
+            className="p-2 rounded-full bg-zinc-200/20"
+            onClick={onClickPlus}
+          >
+            +
+          </button>
         </div>
-        <b className="p-2 ">{`${price}$`}</b>
+        <b className="p-2 ">{`${fullPrice}$`}</b>
         <button
           className="p-1 rounded-full absolute top-0 right-0 bg-zinc-200/20"
           onClick={onClickRemove}
