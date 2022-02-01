@@ -9,12 +9,14 @@ import CartItem from "../CartItem";
 export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ cart }) => cart.isLoaded);
+
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(setCart(items));
   }, []);
 
   const onRemove = ({ id }) => {
+    console.log(id);
     dispatch(deleteDishFromCart(id));
   };
 

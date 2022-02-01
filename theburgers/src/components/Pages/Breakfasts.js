@@ -46,6 +46,7 @@ export default function Breakfasts({ API }) {
                     price={item.price}
                     onAddToCart={(obj) => onAddToCart(obj)}
                     isCart={isCart}
+                    id={item.id}
                   />
                 ))}
             </div>

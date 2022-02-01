@@ -10,6 +10,7 @@ export default function CartItem({
   onRemove,
 }) {
   const onClickRemove = () => {
+    console.log("on card", id);
     onRemove({ id });
   };
 

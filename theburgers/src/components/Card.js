@@ -14,10 +14,11 @@ export default function Card({
   const [isAdded, setIsAdded] = React.useState(false);
 
   const onClickAdd = () => {
-    onAddToCart({ imgSrc, description, dishName, price });
+    onAddToCart({ imgSrc, description, dishName, price, id });
     setIsAdded(!isAdded);
   };
   const onClickRemove = () => {
+    console.log("on card", id);
     onRemove({ id });
   };
 

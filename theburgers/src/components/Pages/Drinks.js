@@ -42,6 +42,7 @@ export default function Drinks({ API }) {
                     price={item.price}
                     onAddToCart={(obj) => onAddToCart(obj)}
                     isCart={isCart}
+                    id={item.id}
                   />
                 ))}
             </div>
