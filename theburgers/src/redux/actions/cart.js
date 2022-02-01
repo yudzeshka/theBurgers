@@ -31,3 +31,8 @@ export const deleteDishFromCart = (id) => ({
   type: "DELETE_DISH",
   payload: id,
 });
+
+export const addOnePiece = (id) => ({
+  type: "ADD_ONE",
+  payload: id,
+});

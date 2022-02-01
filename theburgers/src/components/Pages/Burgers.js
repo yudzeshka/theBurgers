@@ -46,6 +46,7 @@ export default function Burgers({ API }) {
                     onAddToCart={(obj) => onAddToCart(obj)}
                     isCart={isCart}
                     id={item.id}
+                    amount={item.amount}
                   />
                 ))}
             </div>

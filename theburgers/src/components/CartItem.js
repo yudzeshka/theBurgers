@@ -8,14 +8,19 @@ export default function CartItem({
   price,
   id,
   onRemove,
+  onPlus,
 }) {
+  const [counter, setCounter] = React.useState(1);
+
+  const onClickPlus = () => {
+    onPlus({ id });
+    setCounter(counter + 1);
+  };
+
   const onClickRemove = () => {
     onRemove({ id });
   };
-  const [counter, setCounter] = React.useState(5);
-  const onClickPlus = () => {
-    setCounter(counter + 1);
-  };
+
   const onClickMinus = () => {
     setCounter(counter - 1);
   };

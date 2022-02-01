@@ -16,6 +16,12 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         items: [...state.items, action.payload],
       };
+    case "ADD_ONE":
+      return {
+        ...state,
+        items: [...state.items].find((item) => item.id === action.payload)
+          .amount++,
+      };
     case "DELETE_DISH":
       return {
         ...state,

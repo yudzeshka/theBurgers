@@ -5,6 +5,7 @@ import { HollowDotsSpinner } from "react-epic-spinners";
 import { deleteDishFromCart, setCart } from "../../redux/actions/cart";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
+import { addOnePiece } from "../../redux/actions/cart";
 
 export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
@@ -17,6 +18,11 @@ export default function Cart() {
 
   const onRemove = ({ id }) => {
     dispatch(deleteDishFromCart(id));
+  };
+
+  const onPlus = ({ id }) => {
+    console.log(id);
+    dispatch(addOnePiece(id));
   };
 
   const totalPrice = items.reduce((sum, obj) => obj.price + sum, 0);
@@ -45,6 +51,7 @@ export default function Cart() {
                     price={item.price}
                     id={item.id}
                     onRemove={(id) => onRemove(id)}
+                    onPlus={(id) => onPlus(id)}
                   />
                 ))}
             </div>

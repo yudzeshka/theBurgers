@@ -9,11 +9,12 @@ export default function Card({
   onAddToCart,
   id,
   isCart,
+  amount,
 }) {
   const [isAdded, setIsAdded] = React.useState(false);
 
   const onClickAdd = () => {
-    onAddToCart({ imgSrc, description, dishName, price, id });
+    onAddToCart({ imgSrc, description, dishName, price, id, amount });
     setIsAdded(!isAdded);
   };
 
