@@ -11,12 +11,15 @@ export default function Drinks({ API }) {
   const dispatch = useDispatch();
   const items = useSelector(({ drinks }) => drinks.items);
   const isLoaded = useSelector(({ drinks }) => drinks.isLoaded);
+
   React.useEffect(() => {
     if (!items.length) dispatch(fetchDrinks(API));
   }); //deleted empty array of dependencies
+
   const onAddToCart = (obj) => {
     dispatch(addDishToCart(obj));
   };
+
   return (
     <div className="menuPage">
       <Header />

@@ -17,6 +17,7 @@ export default function Breakfasts({ API }) {
       dispatch(fetchBreakfasts(API));
     }
   }); //deleted empty array of dependencies
+
   const onAddToCart = (obj) => {
     dispatch(addDishToCart(obj));
   };

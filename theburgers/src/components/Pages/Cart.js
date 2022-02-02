@@ -2,20 +2,21 @@ import React from "react";
 import Header from "../Header";
 // import axios from "axios";
 import { HollowDotsSpinner } from "react-epic-spinners";
+import { useSelector, useDispatch } from "react-redux";
+import CartItem from "../CartItem";
 import {
   deleteDishFromCart,
   setCart,
   addOnePiece,
   removeOnePiece,
 } from "../../redux/actions/cart";
-import { useSelector, useDispatch } from "react-redux";
-import CartItem from "../CartItem";
 
 export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ cart }) => cart.isLoaded);
 
   const dispatch = useDispatch();
+
   React.useEffect(() => {
     dispatch(setCart(items));
   }); //deleted empty array of dependencies
@@ -32,7 +33,10 @@ export default function Cart() {
     dispatch(deleteDishFromCart(id));
   };
 
-  const totalPrice = items.reduce((sum, obj) => obj.price + sum, 0);
+  const totalPrice = items.reduce(
+    (sum, obj) => obj.price * obj.amount + sum,
+    0
+  );
 
   return (
     <div className="menuPage h-screen overflow-auto">
@@ -63,11 +67,22 @@ export default function Cart() {
                   />
                 ))}
             </div>
-            <div className="flex justify-between px-5">
+            <div className="flex justify-between px-5 mb-3">
               <h1 className="text-center text-4xl font-thin ">
                 Total: ${totalPrice}
               </h1>
-              <button className="text-center text-2xl border-double border-4 border-emerald-800 px-5">
+              <button
+                className="text-center text-2xl border-double border-4 border-emerald-800 px-5 cursor-pointer active:scale-110"
+                onClick={() =>
+                  console.log(
+                    items.map(
+                      (item) =>
+                        `${item.dishName}, prise = ${item.price}$, amount = ${item.amount},`
+                    ),
+                    `totalPrice = ${totalPrice}$, firstname: Maksim, phoneNumber: +375292223876`
+                  )
+                }
+              >
                 Checkout
               </button>
             </div>

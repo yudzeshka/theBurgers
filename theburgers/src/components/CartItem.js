@@ -19,7 +19,7 @@ export default function CartItem({
   };
 
   const onClickMinus = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       onMinus({ id });
       setCounter(counter - 1);
     }
@@ -29,6 +29,7 @@ export default function CartItem({
     onRemove({ id });
   };
   const fullPrice = price * counter;
+
   return (
     <div className="flex flex-row justify-between m-4 border-solid border-2 border-black rounded-lg">
       <div className="flex flex-row">

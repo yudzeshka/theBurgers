@@ -17,9 +17,11 @@ export default function Burgers({ API }) {
       dispatch(fetchBurgers(API));
     }
   }); //deleted empty array of dependencies
+
   const onAddToCart = (obj) => {
     dispatch(addDishToCart(obj));
   };
+
   return (
     <div className="menuPage">
       <Header />

@@ -18,14 +18,10 @@ export default function Header() {
           <li>DRINKS</li>
         </Link>
       </nav>
-      {/* <Categories
-        onClick={(name) => console.log(name)}
-        items={["HOME", "BURGERS", "BREAKFASTS", "DRINKS"]}
-      /> */}
+
       <div className="flex items-center ml-4">
         <Link to={"/cart"}>
           <div className="img"></div>
-          {/* <span>THE BRGRS</span> */}
         </Link>
       </div>
     </div>

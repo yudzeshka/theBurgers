@@ -17,7 +17,7 @@ body {
   color: #fff;
 
   .homePage {
-    background-image: url(/img/background5.jpg);
+    background-image: url(../public/img/backgrounds/background5.jpg);
     background-size: cover;
     display: flex;
     width: 100vw;
@@ -51,7 +51,7 @@ body {
       .img {
         padding: 1rem;
         margin-right: 2rem;
-        background-image: url(/img/cart.png);
+        background-image: url(../public/img/icons/cart.png);
         background-size: cover;
         width: 25px;
         height: 25px;
@@ -94,7 +94,7 @@ body {
   }
 
   .menuPage {
-    background-image: url(/img/wood4.jpg);
+    background-image: url(../public/img/backgrounds/wood4.jpg);
     background-size: contain;
     display: flex;
     width: 100vw;
@@ -126,7 +126,7 @@ body {
       .img {
         padding: 1rem;
         margin-right: 2rem;
-        background-image: url(/img/cart.png);
+        background-image: url(../public/img/icons/cart.png);
         background-size: cover;
         width: 25px;
         height: 25px;
