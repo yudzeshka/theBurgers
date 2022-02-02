@@ -17,11 +17,28 @@ const cartReducer = (state = initialState, action) => {
         items: [...state.items, action.payload],
       };
     case "ADD_ONE":
+      const newItemsWithAdd = [...state.items].map((item) => {
+        if (item.id === action.payload) {
+          item.amount++;
+        }
+        return item;
+      });
       return {
         ...state,
-        items: [...state.items].find((item) => item.id === action.payload)
-          .amount++,
+        items: [...newItemsWithAdd],
       };
+    case "REMOVE_ONE":
+      const newItemsWithoutRemove = [...state.items].map((item) => {
+        if (item.id === action.payload) {
+          item.amount--;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        items: [...newItemsWithoutRemove],
+      };
+
     case "DELETE_DISH":
       return {
         ...state,

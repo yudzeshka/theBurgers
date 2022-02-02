@@ -9,6 +9,7 @@ export default function CartItem({
   id,
   onRemove,
   onPlus,
+  onMinus,
 }) {
   const [counter, setCounter] = React.useState(1);
 
@@ -17,12 +18,13 @@ export default function CartItem({
     setCounter(counter + 1);
   };
 
-  const onClickRemove = () => {
-    onRemove({ id });
+  const onClickMinus = () => {
+    onMinus({ id });
+    setCounter(counter - 1);
   };
 
-  const onClickMinus = () => {
-    setCounter(counter - 1);
+  const onClickRemove = () => {
+    onRemove({ id });
   };
   const fullPrice = price * counter;
   return (
@@ -31,33 +33,34 @@ export default function CartItem({
         <img className="h-30 w-40" src={imgSrc} alt={`${dishName}`} />
         <div className="flex flex-col items-start">
           <h3>{dishName}</h3>
-          <p>{description}</p>
+          <p></p>
         </div>
       </div>
       <div className="flex flex-row justify-center items-center relative ">
         <div className="flex flex-row justify-center items-center">
-          <button
-            className="p-2 rounded-full bg-zinc-200/20"
+          <img
+            src="../../img/icons/minus.svg"
+            alt=""
+            className="h-8 w-8 cursor-pointer active:scale-110"
             onClick={onClickMinus}
             disabled={counter === 0}
-          >
-            -
-          </button>
+          />
+
           <p className="p-2 rounded-full">{counter}</p>
-          <button
-            className="p-2 rounded-full bg-zinc-200/20"
+          <img
+            src="../../img/icons/plus.svg"
+            alt=""
+            className="h-8 w-8 cursor-pointer active:scale-110"
             onClick={onClickPlus}
-          >
-            +
-          </button>
+          />
         </div>
         <b className="p-2 ">{`${fullPrice}$`}</b>
-        <button
-          className="p-1 rounded-full absolute top-0 right-0 bg-zinc-200/20"
+        <img
+          src="../../img/icons/close.svg"
+          alt=""
+          className="absolute top-0 right-0 h-8 w-8 cursor-pointer   active:rotate-12 "
           onClick={onClickRemove}
-        >
-          X
-        </button>
+        />
       </div>
     </div>
   );
