@@ -18,7 +18,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(setCart(items));
-  }, []);
+  }); //deleted empty array of dependencies
 
   const onPlus = ({ id }) => {
     dispatch(addOnePiece(id));

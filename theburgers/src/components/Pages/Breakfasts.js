@@ -11,13 +11,12 @@ export default function Breakfasts({ API }) {
   const dispatch = useDispatch();
   const items = useSelector(({ breakfasts }) => breakfasts.items);
   const isLoaded = useSelector(({ breakfasts }) => breakfasts.isLoaded);
-  const isCart = false;
 
   React.useEffect(() => {
     if (!items.length) {
       dispatch(fetchBreakfasts(API));
     }
-  }, []);
+  }); //deleted empty array of dependencies
   const onAddToCart = (obj) => {
     dispatch(addDishToCart(obj));
   };
@@ -45,8 +44,8 @@ export default function Breakfasts({ API }) {
                     dishName={item.dishName}
                     price={item.price}
                     onAddToCart={(obj) => onAddToCart(obj)}
-                    isCart={isCart}
                     id={item.id}
+                    amount={item.amount}
                   />
                 ))}
             </div>
