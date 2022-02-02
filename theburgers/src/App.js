@@ -8,7 +8,8 @@ import Drinks from "./components/Pages/Drinks";
 import Cart from "./components/Pages/Cart";
 
 function App() {
-  const API = process.env.REACT_APP_MOKAPI_KEY;
+  // const API = process.env.REACT_APP_MOKAPI_KEY;
+  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
   return (
     <>
       <div className="wrapper">
