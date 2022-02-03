@@ -42,7 +42,7 @@ export default function CartItem({
       <div className="flex flex-row justify-center items-center relative ">
         <div className="flex flex-row justify-center items-center">
           <img
-            src="../../img/icons/minus.svg"
+            src="../../img/icons/minus1.png"
             alt=""
             className="h-8 w-8 cursor-pointer active:scale-110"
             onClick={onClickMinus}
@@ -50,15 +50,15 @@ export default function CartItem({
 
           <p className="p-2 rounded-full">{counter}</p>
           <img
-            src="../../img/icons/plus.svg"
+            src="../../img/icons/plus3.png"
             alt=""
-            className="h-8 w-8 cursor-pointer active:scale-110"
+            className="h-8 w-8 cursor-pointer active:scale-110 "
             onClick={onClickPlus}
           />
         </div>
         <b className="p-2 ">{`${fullPrice}$`}</b>
         <img
-          src="../../img/icons/close.svg"
+          src="../../img/icons/close1.png"
           alt=""
           className="absolute top-0 right-0 h-8 w-8 cursor-pointer   active:rotate-12 "
           onClick={onClickRemove}

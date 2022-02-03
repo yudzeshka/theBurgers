@@ -10,7 +10,7 @@ import {
   addOnePiece,
   removeOnePiece,
 } from "../../redux/actions/cart";
-import Form from "../Form";
+import FormFormik from "../FormFormik";
 
 export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
@@ -50,9 +50,9 @@ export default function Cart() {
         </div>
       ) : (
         <div className="contentWrapper">
-          <div className="content h-full">
-            <h1 className="text-center text-4xl font-thin">Your order:</h1>
-            <div className="flex flex-col">
+          <h1 className="text-center text-4xl font-thin">Your order:</h1>
+          <div className="cartContent h-full flex flex-row ">
+            <div className="flex flex-col basis-3/5">
               {items &&
                 items.map((item) => (
                   <CartItem
@@ -68,25 +68,27 @@ export default function Cart() {
                   />
                 ))}
             </div>
-            <div className="flex justify-between px-5 mb-3">
-              <Form />
-              <h1 className="text-center text-4xl font-thin ">
-                Total: ${totalPrice}
-              </h1>
-              <button
-                className="text-center text-2xl border-double border-4 border-emerald-800 px-5 cursor-pointer active:scale-110"
-                onClick={() =>
-                  console.log(
-                    items.map(
-                      (item) =>
-                        `${item.dishName}, prise = ${item.price}$, amount = ${item.amount},`
-                    ),
-                    `totalPrice = ${totalPrice}$, firstname: Maksim, phoneNumber: +375292223876`
-                  )
-                }
-              >
-                Checkout
-              </button>
+            <div className="flex flex-col basis-2/5 border-solid border-2 border-black rounded-lg m-4 justify-between items-center px-5 mb-3 ">
+              <FormFormik />
+              <div>
+                <h1 className="text-center text-4xl font-thin ">
+                  Total: ${totalPrice}
+                </h1>
+                <button
+                  className="text-center text-2xl border-double border-4 border-emerald-800 px-5 cursor-pointer active:scale-110"
+                  onClick={() =>
+                    console.log(
+                      items.map(
+                        (item) =>
+                          `${item.dishName}, prise = ${item.price}$, amount = ${item.amount},`
+                      ),
+                      `totalPrice = ${totalPrice}$, firstname: Maksim, phoneNumber: +375292223876`
+                    )
+                  }
+                >
+                  Checkout
+                </button>
+              </div>
             </div>
           </div>
         </div>

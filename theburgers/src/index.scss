@@ -148,6 +148,11 @@ body {
         bottom: -15px;
       }
     }
+    .cartContent {
+      background: rgba($color: lightgray, $alpha: 0.1);
+      margin: 0 5vw;
+    }
+
     .content {
       background: rgba($color: lightgray, $alpha: 0.1);
       margin: 0 17vw;
