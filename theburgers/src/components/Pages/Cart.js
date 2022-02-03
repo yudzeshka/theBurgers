@@ -10,6 +10,7 @@ import {
   addOnePiece,
   removeOnePiece,
 } from "../../redux/actions/cart";
+import Form from "../Form";
 
 export default function Cart() {
   const items = useSelector(({ cart }) => cart.items);
@@ -68,6 +69,7 @@ export default function Cart() {
                 ))}
             </div>
             <div className="flex justify-between px-5 mb-3">
+              <Form />
               <h1 className="text-center text-4xl font-thin ">
                 Total: ${totalPrice}
               </h1>
