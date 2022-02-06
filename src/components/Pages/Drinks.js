@@ -31,9 +31,9 @@ export default function Drinks({ API }) {
         </div>
       ) : (
         <div className="contentWrapper min-h-screen">
-          <div className="content">
+          <div className="content mx-[5vw] md:mx-[17vw]">
             <CarouselBox className="carousel" />
-            <div className="cardItems">
+            <div className="cardItems mt-5 grid grid-cols-2 md:grid-cols-3 ">
               {items &&
                 items.map((item) => (
                   <Card

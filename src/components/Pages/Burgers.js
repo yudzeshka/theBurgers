@@ -3,18 +3,18 @@ import Header from "../Header";
 import Card from "../Card";
 import CarouselBox from "../CarouselBox";
 import { HollowDotsSpinner } from "react-epic-spinners";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchBreakfasts } from "../../redux/actions/breakfasts";
+import { fetchBurgers } from "../../redux/actions/burgers";
+import { useSelector, useDispatch } from "react-redux";
 import { addDishToCart } from "../../redux/actions/cart";
 
-export default function Breakfasts({ API }) {
+export default function Burgers({ API }) {
   const dispatch = useDispatch();
-  const items = useSelector(({ breakfasts }) => breakfasts.items);
-  const isLoaded = useSelector(({ breakfasts }) => breakfasts.isLoaded);
+  const items = useSelector(({ burgers }) => burgers.items);
+  const isLoaded = useSelector(({ burgers }) => burgers.isLoaded);
 
   React.useEffect(() => {
     if (!items.length) {
-      dispatch(fetchBreakfasts(API));
+      dispatch(fetchBurgers(API));
     }
   }); //deleted empty array of dependencies
 
@@ -33,9 +33,9 @@ export default function Breakfasts({ API }) {
         </div>
       ) : (
         <div className="contentWrapper min-h-screen">
-          <div className="content">
+          <div className="content mx-[5vw] md:mx-[17vw]">
             <CarouselBox className="carousel" />
-            <div className="cardItems">
+            <div className="cardItems mt-5 grid grid-cols-2 md:grid-cols-3 ">
               {items &&
                 items.map((item) => (
                   <Card

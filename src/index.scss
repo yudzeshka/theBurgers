@@ -11,8 +11,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  .button {
+    border: 1px solid white;
+    padding: 7px;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      color: #cf0a2c;
+      transition: all 0.4s ease-out;
+    }
+  }
 }
-
+.error {
+  text-align: center;
+}
 .wrapper {
   color: #fff;
 
@@ -25,17 +37,13 @@ body {
     flex-direction: column;
 
     .header {
-      display: flex;
-      justify-content: space-between;
       flex-basis: 8vh;
       &:hover {
         background-color: rgba($color: black, $alpha: 0.7);
         transition: background-color 0.4s ease-out;
       }
       nav {
-        margin-left: 4rem;
         li {
-          padding: 1rem;
           cursor: pointer;
           &:hover {
             color: #cf0a2c;
@@ -49,8 +57,6 @@ body {
       }
 
       .img {
-        padding: 1rem;
-        margin-right: 2rem;
         background-image: url(../public/img/icons/cart.png);
         background-size: cover;
         width: 25px;
@@ -80,16 +86,6 @@ body {
         font-size: 50px;
         font-weight: 200;
       }
-      button {
-        border: 1px solid white;
-        padding: 7px;
-        transition: all 0.2s ease-out;
-        &:hover {
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          color: #cf0a2c;
-          transition: all 0.4s ease-out;
-        }
-      }
     }
   }
 
@@ -97,7 +93,6 @@ body {
     background-image: url(../public/img/backgrounds/wood4.jpg);
     background-size: contain;
     display: flex;
-    width: 100vw;
     flex-direction: column;
 
     .header {
@@ -109,9 +104,7 @@ body {
         background-color: rgba($color: black, $alpha: 0.8);
       }
       nav {
-        margin-left: 4rem;
         li {
-          padding: 1rem;
           cursor: pointer;
           &:hover {
             color: #cf0a2c;
@@ -122,10 +115,13 @@ body {
       .active {
         color: #cf0a2c;
       }
-
+      .user {
+        cursor: pointer;
+        &:hover {
+          color: #cf0a2c;
+        }
+      }
       .img {
-        padding: 1rem;
-        margin-right: 2rem;
         background-image: url(../public/img/icons/cart.png);
         background-size: cover;
         width: 25px;
@@ -138,8 +134,8 @@ body {
     }
 
     .carousel {
-      width: 47vw;
-      height: auto;
+      width: 40vw;
+      height: 20vw;
       text-align: center;
       margin: auto;
       padding: 10px 0 0 0;
@@ -152,10 +148,12 @@ body {
       background: rgba($color: lightgray, $alpha: 0.1);
       margin: 0 5vw;
     }
-
+    .orderContent {
+      background: rgba($color: lightgray, $alpha: 0.1);
+    }
     .content {
       background: rgba($color: lightgray, $alpha: 0.1);
-      margin: 0 17vw;
+      padding-bottom: 20px;
 
       .promotions {
         padding: 40px 0;
@@ -176,12 +174,11 @@ body {
     .cardItems {
       display: grid;
       gap: 1%;
-      grid-template-columns: repeat(3, 1fr);
+      padding-bottom: 35px;
 
       .card {
         color: white;
         background-color: #0009;
-        // background: rgba($color: SaddleBrown, $alpha: 0.6);
         margin: 7%;
         position: relative;
         border-radius: 7px;

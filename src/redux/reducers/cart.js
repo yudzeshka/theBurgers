@@ -9,7 +9,6 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        isLoaded: true,
       };
     case "ADD_DISH":
       return {
@@ -45,6 +44,10 @@ const cartReducer = (state = initialState, action) => {
         items: [...state.items].filter(function (item) {
           return item.id !== action.payload;
         }),
+      };
+    case "CLEAR_CART":
+      return {
+        items: [],
       };
     default:
       return state;

@@ -18,11 +18,13 @@ export default function Card({
   };
 
   return (
-    <div className="card flex flex-col justify-between ">
+    <div className="card flex flex-col justify-between border-solid border border-white ">
       <div className="relative group">
         <img className="dishImg" src={imgSrc} alt={`${dishName}`} />
         <div className=" justify-center absolute w-full h-full top-0 left-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center text-white">
-          <p className="text-white text-center font-bold ">{description}</p>
+          <p className="text-white text-center font-bold text-base">
+            {description}
+          </p>
         </div>
       </div>
       <div className="flex flex-col justify-between ">

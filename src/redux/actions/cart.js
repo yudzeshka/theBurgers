@@ -22,3 +22,7 @@ export const removeOnePiece = (id) => ({
   type: "REMOVE_ONE",
   payload: id,
 });
+
+export const clearCart = () => ({
+  type: "CLEAR_CART",
+});

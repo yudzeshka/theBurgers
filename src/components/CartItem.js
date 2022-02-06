@@ -31,28 +31,31 @@ export default function CartItem({
   const fullPrice = price * counter;
 
   return (
-    <div className="flex flex-row justify-between m-4 border-solid border-2 border-black rounded-lg">
-      <div className="flex flex-row">
-        <img className="h-30 w-40" src={imgSrc} alt={`${dishName}`} />
+    <div className="flex flex-row justify-between m-4 border-solid border border-white rounded-lg p-2">
+      <div className="flex flex-col md:flex-row">
+        <img
+          className="h-30 w-40 border border-black rounded-lg "
+          src={imgSrc}
+          alt={`${dishName}`}
+        />
         <div className="flex flex-col items-start">
-          <h3>{dishName}</h3>
+          <h3 className="px-5">{dishName}</h3>
           <p></p>
         </div>
       </div>
-      <div className="flex flex-row justify-center items-center relative ">
+      <div className="flex flex-col md:flex-row justify-center items-center relative ">
         <div className="flex flex-row justify-center items-center">
           <img
             src="../../img/icons/minus1.png"
             alt=""
-            className="h-8 w-8 cursor-pointer active:scale-110"
+            className="h-5 w-5 md:h-8 md:w-8 cursor-pointer active:scale-110"
             onClick={onClickMinus}
           />
-
           <p className="p-2 rounded-full">{counter}</p>
           <img
             src="../../img/icons/plus3.png"
             alt=""
-            className="h-8 w-8 cursor-pointer active:scale-110 "
+            className="h-5 w-5 md:h-8 md:w-8 cursor-pointer active:scale-110 "
             onClick={onClickPlus}
           />
         </div>
@@ -60,7 +63,7 @@ export default function CartItem({
         <img
           src="../../img/icons/close1.png"
           alt=""
-          className="absolute top-0 right-0 h-8 w-8 cursor-pointer   active:rotate-12 "
+          className="absolute top-0 right-0 h-5 w-5 md:h-8 md:w-8 cursor-pointer   active:rotate-12 "
           onClick={onClickRemove}
         />
       </div>
