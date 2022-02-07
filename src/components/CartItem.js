@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 export default function CartItem({
   imgSrc,
-  description,
   dishName,
   price,
   id,

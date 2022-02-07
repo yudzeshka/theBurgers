@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
 import {
   deleteDishFromCart,
-  setCart,
   addOnePiece,
   removeOnePiece,
   clearCart,
@@ -15,13 +14,9 @@ import Popup from "../Popup";
 
 export default function Cart({ currentUser }) {
   const [userData, setUserData] = React.useState(null);
-  const [orderComplited, setOrderComplited] = React.useState(false);
+  const [orderCompleted, setOrderCompleted] = React.useState(false);
   const items = useSelector(({ cart }) => cart.items);
   const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    dispatch(setCart(items));
-  }, [items]); //deleted empty array of dependencies
 
   const onPlus = ({ id }) => {
     dispatch(addOnePiece(id));
@@ -35,7 +30,7 @@ export default function Cart({ currentUser }) {
     dispatch(deleteDishFromCart(id));
   };
 
-  const onClickDone = () => setOrderComplited(false);
+  const onClickDone = () => setOrderCompleted(false);
 
   const totalPrice = items.reduce(
     (sum, obj) => obj.price * obj.amount + sum,
@@ -59,12 +54,12 @@ export default function Cart({ currentUser }) {
       { [new Date()]: { dishes: items, totalPrice: totalPrice } },
       { merge: true }
     ).then(dispatch(clearCart()));
-    setOrderComplited(true);
+    setOrderCompleted(true);
   };
 
   return (
     <div className="menuPage h-screen overflow-auto relative">
-      {orderComplited ? (
+      {orderCompleted ? (
         <Popup onClick={onClickDone} />
       ) : (
         <>

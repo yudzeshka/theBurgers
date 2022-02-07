@@ -18,8 +18,6 @@ function App() {
     auth && onAuthStateChanged(auth, (user) => setCurrentUser(user));
   }, []);
 
-  // const API = process.env.REACT_APP_MOKAPI_KEY;
-  const API = "https://61de95d1fb8dae0017c2e11f.mockapi.io";
   return (
     <>
       <div className="wrapper">
@@ -30,9 +28,9 @@ function App() {
             path="/sign-up"
             element={<SignUp currentUser={currentUser} />}
           />
-          <Route path="/burgers" exact element={<Burgers API={API} />} />
-          <Route path="/breakfasts" exact element={<Breakfasts API={API} />} />
-          <Route path="/drinks" exact element={<Drinks API={API} />} />
+          <Route path="/burgers" exact element={<Burgers />} />
+          <Route path="/breakfasts" exact element={<Breakfasts />} />
+          <Route path="/drinks" exact element={<Drinks />} />
           <Route
             path="/cart"
             exact

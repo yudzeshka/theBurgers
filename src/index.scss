@@ -25,6 +25,29 @@ body {
 .error {
   text-align: center;
 }
+
+.fullCart {
+  background-image: url(../public/img/icons/fullCart.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 1px solid #cf0a2c;
+  }
+}
+.emptyCart {
+  background-image: url(../public/img/icons/emptyCart.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 1px solid #cf0a2c;
+  }
+}
 .wrapper {
   color: #fff;
 
@@ -54,17 +77,6 @@ body {
 
       .active {
         color: #cf0a2c;
-      }
-
-      .img {
-        background-image: url(../public/img/icons/cart.png);
-        background-size: cover;
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        &:hover {
-          border-bottom: 1px solid #cf0a2c;
-        }
       }
     }
 
@@ -121,16 +133,6 @@ body {
           color: #cf0a2c;
         }
       }
-      .img {
-        background-image: url(../public/img/icons/cart.png);
-        background-size: cover;
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        &:hover {
-          border-bottom: 1px solid #cf0a2c;
-        }
-      }
     }
 
     .carousel {
@@ -139,9 +141,13 @@ body {
       text-align: center;
       margin: auto;
       padding: 10px 0 0 0;
+      background-size: 100%;
 
       .slick-dots {
         bottom: -15px;
+      }
+      img {
+        min-height: 100%;
       }
     }
     .cartContent {

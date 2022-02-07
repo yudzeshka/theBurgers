@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
-
+import { useSelector } from "react-redux";
 export default function Header() {
+  const items = useSelector(({ cart }) => cart.items);
   return (
     <div className="header flex md:justify-between sticky top-0 z-10">
       <nav className="flex items-center list-none ml-1 md:ml-16">
@@ -29,7 +30,7 @@ export default function Header() {
             {auth.currentUser.displayName}
           </Link>
           <Link to={"/cart"}>
-            <div className="img p-1 mr-2 md:p-4 md:mr-8 "></div>
+            <div className={items.length ? "fullCart" : "emptyCart"}></div>
           </Link>
         </div>
       )}

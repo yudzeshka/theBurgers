@@ -7,15 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDrinks } from "../../redux/actions/drinks";
 import { addDishToCart } from "../../redux/actions/cart";
 
-export default function Drinks({ API }) {
+export default function Drinks() {
   const dispatch = useDispatch();
   const items = useSelector(({ drinks }) => drinks.items);
   const isLoaded = useSelector(({ drinks }) => drinks.isLoaded);
 
   React.useEffect(() => {
-    if (!items.length) dispatch(fetchDrinks(API));
-  }); //deleted empty array of dependencies
-
+    if (!items.length) dispatch(fetchDrinks());
+  });
   const onAddToCart = (obj) => {
     dispatch(addDishToCart(obj));
   };

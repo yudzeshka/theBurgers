@@ -7,18 +7,28 @@ export default function CarouselBox() {
   const images = [
     {
       id: 1,
-      src: "../../img/slider/slide1.jpg",
-      alt: "Burger 1",
+      src: "../../img/slider/slide4.jpg",
+      alt: "Burger 4",
     },
     {
       id: 2,
-      src: "../../img/slider/slide2.jpg",
-      alt: "Burger 2",
+      src: "../../img/slider/slide5.jpg",
+      alt: "Burger 5",
     },
     {
       id: 3,
-      src: "../../img/slider/slide3.jpg",
-      alt: "Burger 3",
+      src: "../../img/slider/slide7.jpg",
+      alt: "Burger 7",
+    },
+    {
+      id: 4,
+      src: "../../img/slider/slide8.jpg",
+      alt: "Burger 8",
+    },
+    {
+      id: 5,
+      src: "../../img/slider/slide10.jpg",
+      alt: "Burger 10",
     },
   ];
 
